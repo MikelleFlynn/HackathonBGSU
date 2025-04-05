@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f3f8f3;
+    }
+
+    .login-container {
+      max-width: 400px;
+      margin: 100px auto;
+      padding: 2rem;
+      background-color: #ffffff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 16px;
+      text-align: center;
+    }
+
+    .login-container h2 {
+      margin-bottom: 1.5rem;
+      color: #2e7d32; /* dark green */
+    }
+
+    .login-container input {
+      width: 100%;
+      padding: 0.75rem;
+      margin: 0.5rem 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    .login-container button {
+      width: 100%;
+      padding: 0.75rem;
+      background-color: #66bb6a;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .login-container button:hover {
+      background-color: #4caf50;
+    }
+
+    #message {
+      margin-top: 1rem;
+      color: red;
+    }
+  </style>
+</head>
+<body>
+    <div class="topbar">
+        <div class="logo">HackathonBGSU</div>
+        <nav>
+          <div class="dropdown">
+            <a href="main.html">Home</a>
+          </div>
+    
+          <div class="dropdown">
+            <a href="#">Plants▾</a>
+            <div class="dropdown-content">
+              <a href="#">Herbs</a>
+              <a href="#">Flowers</a>
+              <a href="#">Vegetables</a>
+              <a href="#">Fruits</a>
+            </div>
+          </div>
+    
+          <div class="dropdown">
+            <a href="#">Tips▾</a>
+            <div class="dropdown-content">
+              <a href="#">Watering</a>
+              <a href="#">Sunlight</a>
+              <a href="#">Soil</a>
+            </div>
+          </div>
+    
+          <div class="dropdown">
+            <a href="contact.html">Contact</a>
+          </div>
+    
+          <div id="login" class="dropdown">
+            <a href="login.html" id="login-link">Login</a>
+          </div>
+        </nav>
+    </div>
+
+    <div class="login-container">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="Username" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <button type="submit">Login</button>
+    </form>
+    <p id="message" style="color:red;"></p>
+  </div>
+
+  <script>
+    // Sample credentials (In real use, use server-side validation)
+    const VALID_USERNAME = "user";
+    const VALID_PASSWORD = "pass123";
+
+    const form = document.getElementById('loginForm');
+    const message = document.getElementById('message');
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        if (username === VALID_USERNAME && password === VALID_PASSWORD) {
+            localStorage.setItem('loggedInUser', username);
+            window.location.href = "main.html"; // ✅ Don't clear localStorage here
+        } else {
+            message.textContent = "Invalid username or password.";
+        }
+    });
+  </script>
+</body>
+</html>

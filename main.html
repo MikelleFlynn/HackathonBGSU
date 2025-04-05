@@ -43,6 +43,10 @@
       <div class="dropdown">
         <a href="ContactPage/contact.html">Contact</a>
       </div>
+
+      <div id="login" class="dropdown">
+        <a href="login.html" id="login-link">Login</a>
+      </div>
     </nav>
   </div>
 
@@ -67,12 +71,22 @@
   </div>
 
   <div class="footer">
-    
+
   </div>
 
   <script>
-    // Basic JavaScript functionality can be added here
-    console.log("Top bar website loaded");
+    document.addEventListener("DOMContentLoaded", () => {
+      const loginLink = document.getElementById("login-link");
+      const user = localStorage.getItem("loggedInUser");
+
+      if (user) {
+        loginLink.textContent = "Account";
+        loginLink.href = "account.html"; // Link to an account page if you have one
+      } else {
+        loginLink.textContent = "Login";
+        loginLink.href = "login.html";
+      }
+    });
   </script>
   <script src="SearchFunction/search.js"></script>
 </body>
