@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - HackathonBGSU</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="topbar">
+        <div class="logo">HackathonBGSU</div>
+        <nav>
+          <div class="dropdown">
+            <a href="main.html">Home</a>
+          </div>
+    
+          <div class="dropdown">
+            <a href="#">Plants▾</a>
+            <div class="dropdown-content">
+              <a href="#">Herbs</a>
+              <a href="#">Flowers</a>
+              <a href="#">Vegetables</a>
+              <a href="#">Fruits</a>
+            </div>
+          </div>
+    
+          <div class="dropdown">
+            <a href="#">Tips▾</a>
+            <div class="dropdown-content">
+              <a href="#">Watering</a>
+              <a href="#">Sunlight</a>
+              <a href="#">Soil</a>
+            </div>
+          </div>
+    
+          <div class="dropdown">
+            <a href="contact.html">Contact</a>
+          </div>
+        </nav>
+      </div>
+
+      <div class="contact-page">
+        <div class="contact-card">
+          <h1>Get in Touch</h1>
+          <p>We'd love to hear from you! Fill out the form below and we’ll get back to you ASAP.</p>
+          <form action="https://formsubmit.co/mikelleflynn@gmail.com" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input type="email" name="email" placeholder="Your Email" required />
+            <textarea name="message" placeholder="Your Message" required></textarea>
+          
+            <!-- Optional: redirect after submit -->
+            <input type="hidden" name="_next" value="http://127.0.0.1:5500/thankyou.html" />
+          
+            <button type="submit">Send Message</button>
+          </form>          
+        </div>
+      </div>
+    
+    </body>
+    </html>
