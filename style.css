@@ -31,7 +31,7 @@
   }
 
   .topbar nav a:hover {
-    text-decoration: underline;
+    color: #a7477f
   }
 
   .banner {
@@ -40,6 +40,43 @@
     object-fit: cover;
     object-position: 0 30%;
   }
+
+  /* Dropdown container */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+/* Dropdown content (hidden by default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 140px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+/* Show the dropdown content on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+/* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 5px 15px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+
+  nav a {
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }  
 
   .content {
     padding: 20px;
@@ -73,3 +110,67 @@
     background-color: #63264A;
     height: 40px;
   }
+
+  /* Contact page layout */
+.contact-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px;
+  background: linear-gradient(to right, #e8f5e9, #f1f8e9);
+  min-height: 100vh;
+}
+
+.contact-card {
+  background-color: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+}
+
+.contact-card h1 {
+  margin-bottom: 10px;
+  font-size: 32px;
+  color: #2e7d32;
+}
+
+.contact-card p {
+  margin-bottom: 30px;
+  color: #555;
+}
+
+.contact-card form input,
+.contact-card form textarea {
+  width: 100%;
+  padding: 12px 16px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  resize: vertical;
+}
+
+.contact-card form button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-card form button:hover {
+  background-color: #388e3c;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .contact-card {
+    padding: 20px;
+  }
+}
