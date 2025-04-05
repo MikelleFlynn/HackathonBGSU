@@ -10,7 +10,7 @@
 
   .topbar {
     background-color: white;
-    color: #3D0B37;
+    color: #63264A;
     padding: 15px 120px;
     display: flex;
     justify-content: space-between;
@@ -24,7 +24,7 @@
   }
 
   .topbar nav a {
-    color: #3D0B37;
+    color: #63264A;
     text-decoration: none;
     margin-left: 50px;
     font-size: 1.3em;
@@ -64,7 +64,7 @@
 
 /* Links inside the dropdown */
   .dropdown-content a {
-    color: black;
+    color: #63264A;
     padding: 5px 15px;
     text-decoration: none;
     display: block;
@@ -174,3 +174,63 @@
     padding: 20px;
   }
 }
+
+/* Search bar stye */
+.search-box {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.search-box input {
+  padding: 6px 10px;
+  border-radius: 6px 0 0 6px;
+  border: none;
+  font-size: 14px;
+}
+
+.search-box button {
+  padding: 6px 10px;
+  border: none;
+  background-color: #63264A;
+  color: white;
+  cursor: pointer;
+  border-radius: 0 6px 6px 0;
+}
+
+.search-box button:hover {
+  background-color: #a7477f;
+}
+
+#resultsContainer {
+  padding: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* Plant result card */
+.plant-card {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+
+.plant-card:hover {
+  transform: scale(1.02);
+}
+
+.plant-card h3 {
+  color: #2e7d32;
+  margin-bottom: 10px;
+}
+
+.plant-card p {
+  margin: 6px 0;
+  color: #444;
+  font-size: 14px;
+}
+

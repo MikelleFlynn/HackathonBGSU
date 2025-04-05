@@ -8,12 +8,19 @@
 </head>
 <body>
   <div class="topbar">
-    <div class="logo" >HackathonBGSU</div>
+
+    <div class="logo">HackathonBGSU</div>
+    
+    <div class="search-box">
+        <input type="text" id="plantInput" placeholder="Search plants..." />
+        <button onclick="searchPlants()">🔍</button>
+    </div>
+
     <nav>
       <div class="dropdown">
         <a href="main.html">Home</a>
       </div>
-
+      
       <div class="dropdown">
         <a href="#">Plants▾</a>
         <div class="dropdown-content">
@@ -38,6 +45,8 @@
       </div>
     </nav>
   </div>
+
+  <div id="resultsContainer"></div>
 
   <div>
     <img class="banner" src="Images/banner.jpg" />
@@ -65,5 +74,6 @@
     // Basic JavaScript functionality can be added here
     console.log("Top bar website loaded");
   </script>
+  <script src="search.js"></script>
 </body>
 </html>
