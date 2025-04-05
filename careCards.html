@@ -63,9 +63,14 @@
         background-color: #CBEAA6;
     }
 </style>
+<!--Filtering Buttons-->
+<button onclick="filterFruits()"> Filter for Fruits </button>
+<button onclick="filterFlower()"> Filter for Flowers</button>
+<button onclick="filterHerbs()"> Filter for Herbs</button>
+<button onclick="filterVeggie()"> Filter for Veggies</button>
 <div class="flashcard-container">
     <!--Start of herb flashcards-->
-    <div class="flashcard" onclick="flipCard(this)" name="Herb">
+    <div class="flashcard" onclick="flipCard(this)" id="Herb">
         <div class="flashcard-inner">
             <div class="flashcard-front">
                 Thyme
@@ -78,7 +83,7 @@
             </div>
         </div>
     </div>
-    <div class="flashcard" onclick="flipCard(this)" name="Herb">
+    <div class="flashcard" onclick="flipCard(this)" id="Herb">
         <div class="flashcard-inner">
             <div class="flashcard-front">
                 Rosemary
@@ -91,7 +96,7 @@
             </div>
         </div>
     </div>
-    <div class="flashcard" onclick="flipCard(this)" name="Herb">
+    <div class="flashcard" onclick="flipCard(this)" id="Herb">
         <div class="flashcard-inner">
             <div class="flashcard-front">
                 Oregano
@@ -104,7 +109,7 @@
             </div>
         </div>
     </div>
-    <div class="flashcard" onclick="flipCard(this)" name="Herb">
+    <div class="flashcard" onclick="flipCard(this)" id="Herb">
         <div class="flashcard-inner">
             <div class="flashcard-front">
                 Basil
@@ -117,7 +122,7 @@
             </div>
         </div>
     </div>
-    <div class="flashcard" onclick="flipCard(this)" name="Herb">
+    <div class="flashcard" onclick="flipCard(this)" id="Herb">
         <div class="flashcard-inner">
             <div class="flashcard-front">
                 Mint
@@ -130,7 +135,7 @@
             </div>
         </div>
     </div>
-    <div class="flashcard" onclick="flipCard(this)" name="Herb">
+    <div class="flashcard" onclick="flipCard(this)" id="Herb">
         <div class="flashcard-inner">
             <div class="flashcard-front">
                 Parsley
@@ -147,7 +152,7 @@
 
 <!--Start of flower flashcards-->
 
-<div class="flashcard" onclick="flipCard(this)" name="Flower">
+<div class="flashcard" onclick="flipCard(this)" id="Flower">
     <div class="flashcard-inner">
         <div class="flashcard-front">
             Milkweed
@@ -159,7 +164,7 @@
         </div>
     </div>
 </div>
-<div class="flashcard" onclick="flipCard(this)" name="Flower">
+<div class="flashcard" onclick="flipCard(this)" id="Flower">
     <div class="flashcard-inner">
         <div class="flashcard-front">
             Lavender
@@ -171,7 +176,7 @@
         </div>
     </div>
 </div>
-<div class="flashcard" onclick="flipCard(this)" name="Flower">
+<div class="flashcard" onclick="flipCard(this)" id="Flower">
     <div class="flashcard-inner">
         <div class="flashcard-front">
             Sweet Pea
@@ -183,7 +188,7 @@
         </div>
     </div>
 </div>
-<div class="flashcard" onclick="flipCard(this)" name="Flower">
+<div class="flashcard" onclick="flipCard(this)" id="Flower">
     <div class="flashcard-inner">
         <div class="flashcard-front">
             Alliums
@@ -195,7 +200,7 @@
         </div>
     </div>
 </div>
-<div class="flashcard" onclick="flipCard(this)" name="Flower">
+<div class="flashcard" onclick="flipCard(this)" id="Flower">
     <div class="flashcard-inner">
         <div class="flashcard-front">
             Blue Bonnets
@@ -207,7 +212,7 @@
         </div>
     </div>
 </div>
-<div class="flashcard" onclick="flipCard(this)" name="Flower">
+<div class="flashcard" onclick="flipCard(this)" id="Flower">
     <div class="flashcard-inner">
         <div class="flashcard-front">
             Carnations
@@ -219,7 +224,7 @@
         </div>
     </div>
 </div>
-<div class="flashcard" onclick="flipCard(this)" name="Flower">
+<div class="flashcard" onclick="flipCard(this)" id="Flower">
     <div class="flashcard-inner">
         <div class="flashcard-front">
             Bleeding Hearts
@@ -231,7 +236,7 @@
         </div>
     </div>
 </div>
-<div class="flashcard" onclick="flipCard(this)" name="Flower">
+<div class="flashcard" onclick="flipCard(this)" id="Flower">
     <div class="flashcard-inner">
         <div class="flashcard-front">
             Hydrangea
@@ -243,7 +248,7 @@
         </div>
     </div>
 </div>
-<div class="flashcard" onclick="flipCard(this)" name="Flower">
+<div class="flashcard" onclick="flipCard(this)" id="Flower">
     <div class="flashcard-inner">
         <div class="flashcard-front">
             Daylily
@@ -255,7 +260,7 @@
         </div>
     </div>
 </div>
-<div class="flashcard" onclick="flipCard(this)" name="Flower">
+<div class="flashcard" onclick="flipCard(this)" id="Flower">
     <div class="flashcard-inner">
         <div class="flashcard-front">
             Black-Eyed Susan
@@ -270,7 +275,7 @@
 <!--End of Flower Flashcards-->
 
 <!--Start of Fruits Flashcards-->
-<div class="flashcard" onclick="flipCard(this)" name="Fruit">
+<div class="flashcard" onclick="flipCard(this)" id="Fruit">
     <div class="flashcard-inner">
         <div class="flashcard-front">
             Tomato
@@ -283,7 +288,7 @@
         </div>
     </div>
 </div>
-<div class="flashcard" onclick="flipCard(this)" name="Fruit">
+<div class="flashcard" onclick="flipCard(this)" id="Fruit">
     <div class="flashcard-inner">
         <div class="flashcard-front">
             Strawberry
@@ -296,7 +301,7 @@
         </div>
     </div>
 </div>
-<div class="flashcard" onclick="flipCard(this)" name="Fruit">
+<div class="flashcard" onclick="flipCard(this)" id="Fruit">
     <div class="flashcard-inner">
         <div class="flashcard-front">
             Blueberry
@@ -310,7 +315,7 @@
         </div>
     </div>
 </div>
-<div class="flashcard" onclick="flipCard(this)" name="Fruit">
+<div class="flashcard" onclick="flipCard(this)" id="Fruit">
     <div class="flashcard-inner">
         <div class="flashcard-front">
             Blackberry
@@ -323,7 +328,7 @@
         </div>
     </div>
 </div>
-<div class="flashcard" onclick="flipCard(this)" name="Fruit">
+<div class="flashcard" onclick="flipCard(this)" id="Fruit">
     <div class="flashcard-inner">
         <div class="flashcard-front">
             Lemon
@@ -339,7 +344,7 @@
 <!--End of Fruits Flashcards-->
 
 <!--Start of veggies flashcards-->
-<div class="flashcard" onclick="flipCard(this)" name="Veggie">
+<div class="flashcard" onclick="flipCard(this)" id="Veggie">
     <div class="flashcard-inner">
         <div class="flashcard-front">
             Pea
@@ -352,7 +357,7 @@
         </div>
     </div>
 </div>
-<div class="flashcard" onclick="flipCard(this)" name="Veggie">
+<div class="flashcard" onclick="flipCard(this)" id="Veggie">
     <div class="flashcard-inner">
         <div class="flashcard-front">
             Zucchini
@@ -365,7 +370,7 @@
         </div>
     </div>
 </div>
-<div class="flashcard" onclick="flipCard(this)" name="Veggie">
+<div class="flashcard" onclick="flipCard(this)" id="Veggie">
     <div class="flashcard-inner">
         <div class="flashcard-front">
             Squash
@@ -378,7 +383,7 @@
         </div>
     </div>
 </div>
-<div class="flashcard" onclick="flipCard(this)" name="Veggie">
+<div class="flashcard" onclick="flipCard(this)" id="Veggie">
     <div class="flashcard-inner">
         <div class="flashcard-front">
             Bell Pepper
@@ -391,7 +396,7 @@
         </div>
     </div>
 </div>
-<div class="flashcard" onclick="flipCard(this)" name="Veggie">
+<div class="flashcard" onclick="flipCard(this)" id="Veggie">
     <div class="flashcard-inner">
         <div class="flashcard-front">
             Garlic
@@ -404,7 +409,7 @@
         </div>
     </div>
 </div>
-<div class="flashcard" onclick="flipCard(this)" name="Veggie">
+<div class="flashcard" onclick="flipCard(this)" id="Veggie">
     <div class="flashcard-inner">
         <div class="flashcard-front">
             Lettuce
@@ -424,6 +429,66 @@
 <script>
     function flipCard(card) {
         card.classList.toggle('flip');
+    }
+
+    function filterFruits() {
+        let elementsVeggie = document.querySelectorAll("#Veggie");
+        elementsVeggie.forEach(element => {
+            element.style.display = 'none';
+        });
+        let elementsHerb = document.querySelectorAll("#Herb");
+        elementsHerb.forEach(element => {
+            element.style.display = 'none';
+        });
+        let elementsFlower = document.querySelectorAll("#Flower");
+        elementsFlower.forEach(element => {
+            element.style.display = 'none';
+        });
+    }
+
+    function filterVeggie() {
+        let elementsFruit = document.querySelectorAll("#Fruit");
+        elementsFruit.forEach(element => {
+            element.style.display = 'none';
+        });
+        let elementsHerb = document.querySelectorAll("#Herb");
+        elementsHerb.forEach(element => {
+            element.style.display = 'none';
+        });
+        let elementsFlower = document.querySelectorAll("#Flower");
+        elementsFlower.forEach(element => {
+            element.style.display = 'none';
+        });
+    }
+
+    function filterHerbs() {
+        let elementsVeggie = document.querySelectorAll("#Veggie");
+        elementsVeggie.forEach(element => {
+            element.style.display = 'none';
+        });
+        let elementsFruit = document.querySelectorAll("#Fruit");
+        elementsFruit.forEach(element => {
+            element.style.display = 'none';
+        });
+        let elementsFlower = document.querySelectorAll("#Flower");
+        elementsFlower.forEach(element => {
+            element.style.display = 'none';
+        });
+    }
+
+    function filterFlower() {
+        let elementsVeggie = document.querySelectorAll("#Veggie");
+        elementsVeggie.forEach(element => {
+            element.style.display = 'none';
+        });
+        let elementsHerb = document.querySelectorAll("#Herb");
+        elementsHerb.forEach(element => {
+            element.style.display = 'none';
+        });
+        let elementsFruit = document.querySelectorAll("#Fruit");
+        elementsFruit.forEach(element => {
+            element.style.display = 'none';
+        });
     }
 </script>
 </html>
