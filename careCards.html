@@ -56,369 +56,303 @@
         align-items: center;
         justify-content: center;
         font-size: 20px;
+        overflow: hidden;
     }
 
     .flashcard-back {
         transform: rotateY(180deg);
         background-color: #CBEAA6;
     }
+
 </style>
+
 <!--Filtering Buttons-->
+<!--
 <button onclick="filterFruits()"> Filter for Fruits </button>
 <button onclick="filterFlower()"> Filter for Flowers</button>
 <button onclick="filterHerbs()"> Filter for Herbs</button>
 <button onclick="filterVeggie()"> Filter for Veggies</button>
+<button onclick="refresh()"> Clear Filters</button>-->
 <div class="flashcard-container">
     <!--Start of herb flashcards-->
-    <div class="flashcard" onclick="flipCard(this)" id="Herb">
+    <div class="flashcard" onclick="flipCard(this)" id="Thyme">
         <div class="flashcard-inner">
             <div class="flashcard-front">
+                <img src="Images/Thyme.jpg"/>
+            </div>
+            <div class="flashcard-back">
                 Thyme
             </div>
-            <div class="flashcard-back">
-                Full sun<br>
-                Low water<br>
-                Non-toxic to pets <br>
-                Grows best in Western U.S.
-            </div>
         </div>
     </div>
-    <div class="flashcard" onclick="flipCard(this)" id="Herb">
+    <div class="flashcard" onclick="flipCard(this)" id="Rosemary">
         <div class="flashcard-inner">
             <div class="flashcard-front">
+                <img src="Images/Rosemary.jpg"/>
+            </div>
+            <div class="flashcard-back">
                 Rosemary
             </div>
-            <div class="flashcard-back">
-                Full sun<br>
-                Low to moderate water<br>
-                Toxic to pets<br>
-                Grows best in Southwest U.S.
-            </div>
         </div>
     </div>
+    
     <div class="flashcard" onclick="flipCard(this)" id="Herb">
         <div class="flashcard-inner">
             <div class="flashcard-front">
+                <img src="Images/Oregano.jpg"/>
+            </div>
+            <div class="flashcard-back">
                 Oregano
             </div>
-            <div class="flashcard-back">
-                Full sun<br>
-                Low to moderate water<br>
-                Non-toxic to pets<br>
-                Grows best in Southwest U.S.
-            </div>
         </div>
     </div>
     <div class="flashcard" onclick="flipCard(this)" id="Herb">
         <div class="flashcard-inner">
             <div class="flashcard-front">
+                <img src="Images/Basil.jpg"/>
+            </div>
+            <div class="flashcard-back">
                 Basil
             </div>
-            <div class="flashcard-back">
-                Full sun<br>
-                Moderate water - keep soil moist<br>
-                Non-toxic to pets<br>
-                Grows best in Southeast U.S.
-            </div>
         </div>
     </div>
     <div class="flashcard" onclick="flipCard(this)" id="Herb">
         <div class="flashcard-inner">
             <div class="flashcard-front">
+                <img src="Images/Mint.jpg"/>
+            </div>
+            <div class="flashcard-back">
                 Mint
             </div>
-            <div class="flashcard-back">
-                Patial to full sun<br>
-                High water<br>
-                Non-toxic to pets<br>
-                Grows best in Midwest U.S.
-            </div>
         </div>
     </div>
     <div class="flashcard" onclick="flipCard(this)" id="Herb">
         <div class="flashcard-inner">
             <div class="flashcard-front">
-                Parsley
+                <img src="Images/Parsley.jpg"/>
             </div>
             <div class="flashcard-back">
-                Partial to full sun<br>
-                Moderate water<br>
-                Slightly toxic to pets<br>
-                Grows best in Northeast U.S.
+                Parsley
             </div>
         </div>
     </div>
-<!--End of herb flashcards-->
+<!--End of herb flashcards
 
-<!--Start of flower flashcards-->
+Start of flower flashcards-->
 
 <div class="flashcard" onclick="flipCard(this)" id="Flower">
     <div class="flashcard-inner">
         <div class="flashcard-front">
+            <img src="Images/Milkweed.jpg"/>
+        </div>
+        <div class="flashcard-back">
             Milkweed
         </div>
-        <div class="flashcard-back">
-            Full sun<br>
-            Low water - drought tolerant<br>
-            Toxic to pets<br>
-        </div>
     </div>
 </div>
 <div class="flashcard" onclick="flipCard(this)" id="Flower">
     <div class="flashcard-inner">
         <div class="flashcard-front">
+            <img src="Images/Lavender.jpg"/>
+        </div>
+        <div class="flashcard-back">
             Lavender
         </div>
-        <div class="flashcard-back">
-            Full sun<br>
-            Low water - well-drained soil<br>
-            Mildly toxic to pets<br>
-        </div>
     </div>
 </div>
 <div class="flashcard" onclick="flipCard(this)" id="Flower">
     <div class="flashcard-inner">
         <div class="flashcard-front">
+            <img src="Images/SweetPea.jpg"/>
+        </div>
+        <div class="flashcard-back">
             Sweet Pea
         </div>
+    </div>
+</div>
+<div class="flashcard" onclick="flipCard(this)" id="Flower">
+    <div class="flashcard-inner">
+        <div class="flashcard-front">
+            <img src="Images/Allium.jpg"/>
+        </div>
         <div class="flashcard-back">
-            Full sun to partial shade<br>
-            Moderate water<br>
-            Seeds are toxic to pets<br>
+            Allium
         </div>
     </div>
 </div>
 <div class="flashcard" onclick="flipCard(this)" id="Flower">
     <div class="flashcard-inner">
         <div class="flashcard-front">
-            Alliums
+            <img src="Images/BlueBonnet.jpg"/>
         </div>
         <div class="flashcard-back">
-            Full sun<br>
-            Low to moderate water<br>
-            Toxic to pets<br>
+            Blue Bonnet
         </div>
     </div>
 </div>
 <div class="flashcard" onclick="flipCard(this)" id="Flower">
     <div class="flashcard-inner">
         <div class="flashcard-front">
-            Blue Bonnets
+            <img src="Images/Carnation.jpg"/>
         </div>
         <div class="flashcard-back">
-            Full sun<br>
-            Low water<br>
-            Toxic to pets<br>
+            Carnation
         </div>
     </div>
 </div>
 <div class="flashcard" onclick="flipCard(this)" id="Flower">
     <div class="flashcard-inner">
         <div class="flashcard-front">
-            Carnations
+            <img src="Images/BleedingHeart.jpg"/>
         </div>
         <div class="flashcard-back">
-            Full to partial sun<br>
-            Moderate water<br>
-            Mildly toxic to pets<br>
+            Bleeding Heart
         </div>
     </div>
 </div>
 <div class="flashcard" onclick="flipCard(this)" id="Flower">
     <div class="flashcard-inner">
         <div class="flashcard-front">
-            Bleeding Hearts
+            <img src="Images/Hydrangea.jpg"/>
         </div>
         <div class="flashcard-back">
-            Partial shade<br>
-            Moderate water - keep moist<br>
-            Toxic to pets<br>
-        </div>
-    </div>
-</div>
-<div class="flashcard" onclick="flipCard(this)" id="Flower">
-    <div class="flashcard-inner">
-        <div class="flashcard-front">
             Hydrangea
         </div>
-        <div class="flashcard-back">
-            Morning sun to partial shade<br>
-            Moderate water - do not let soil dry completely<br>
-            Toxic to pets<br>
-        </div>
     </div>
 </div>
 <div class="flashcard" onclick="flipCard(this)" id="Flower">
     <div class="flashcard-inner">
         <div class="flashcard-front">
+            <img src="Images/Daylily.jpg"/>
+        </div>
+        <div class="flashcard-back">
             Daylily
         </div>
-        <div class="flashcard-back">
-            Full to partial sun<br>
-            Moderate water<br>
-            Toxic to cats<br>
-        </div>
     </div>
 </div>
 <div class="flashcard" onclick="flipCard(this)" id="Flower">
     <div class="flashcard-inner">
         <div class="flashcard-front">
+            <img src="Images/BlackEyedSusan.jpg"/>
+        </div>
+        <div class="flashcard-back">
             Black-Eyed Susan
         </div>
-        <div class="flashcard-back">
-            Full sun<br>
-            Low to moderate water<br>
-            Non-toxic to pets<br>
-        </div>
     </div>
 </div>
-<!--End of Flower Flashcards-->
+<!--End of Flower Flashcards
 
-<!--Start of Fruits Flashcards-->
+Start of Fruits Flashcards-->
 <div class="flashcard" onclick="flipCard(this)" id="Fruit">
     <div class="flashcard-inner">
         <div class="flashcard-front">
+            <img src="Images/Tomato.jpg"/>
+        </div>
+        <div class="flashcard-back">
             Tomato
         </div>
-        <div class="flashcard-back">
-            Full sun<br>
-            18"-36" between plants<br>
-            Water 1-2 times per week<br>
-            Toxic to pets (leaves, stems, and unripe fruits)<br>
-        </div>
     </div>
 </div>
 <div class="flashcard" onclick="flipCard(this)" id="Fruit">
     <div class="flashcard-inner">
         <div class="flashcard-front">
+            <img src="Images/Strawberry.jpg"/>
+        </div>
+        <div class="flashcard-back">
             Strawberry
         </div>
-        <div class="flashcard-back">
-            Full sun<br>
-            12"-18" between plants<br>
-            Water 2-3 times per week<br>
-            Non-toxic to pets<br>
-        </div>
     </div>
 </div>
 <div class="flashcard" onclick="flipCard(this)" id="Fruit">
     <div class="flashcard-inner">
         <div class="flashcard-front">
+            <img src="Images/Blueberry.jpg"/>
+        </div>
+        <div class="flashcard-back">
             Blueberry
         </div>
-        <div class="flashcard-back">
-            Full sun<br>
-            18"-24" between plants<br>
-            Water 2-3 times per week<br>
-            Non-toxic to pets<br>
-            Prefers acidic soil
-        </div>
     </div>
 </div>
 <div class="flashcard" onclick="flipCard(this)" id="Fruit">
     <div class="flashcard-inner">
         <div class="flashcard-front">
+            <img src="Images/Blackberry.jpg"/>
+        </div>
+        <div class="flashcard-back">
             Blackberry
         </div>
-        <div class="flashcard-back">
-            Full sun<br>
-            2'-3' between plants<br>
-            Water 2-3 times per week<br>
-            Non-toxic to pets<br>
-        </div>
     </div>
 </div>
 <div class="flashcard" onclick="flipCard(this)" id="Fruit">
     <div class="flashcard-inner">
         <div class="flashcard-front">
+            <img src="Images/Lemon.jpg"/>
+        </div>
+        <div class="flashcard-back">
             Lemon
         </div>
-        <div class="flashcard-back">
-            Full sun<br>
-            12'-15' between plants<br>
-            Water 2-3 times per week<br>
-            Toxic to pets<br>
-        </div>
     </div>
 </div>
-<!--End of Fruits Flashcards-->
+<!--End of Fruits Flashcards
 
-<!--Start of veggies flashcards-->
+Start of veggies flashcards-->
 <div class="flashcard" onclick="flipCard(this)" id="Veggie">
     <div class="flashcard-inner">
         <div class="flashcard-front">
+            <img src="Images/Pea.jpg"/>
+        </div>
+        <div class="flashcard-back">
             Pea
         </div>
-        <div class="flashcard-back">
-            Full sun to partial shade<br>
-            1"-2" between plants<br>
-            Water 2-3 times per week<br>
-            Non-toxic to pets<br>
-        </div>
     </div>
 </div>
 <div class="flashcard" onclick="flipCard(this)" id="Veggie">
     <div class="flashcard-inner">
         <div class="flashcard-front">
+            <img src="Images/Zucchini.jpg"/>
+        </div>
+        <div class="flashcard-back">
             Zucchini
         </div>
-        <div class="flashcard-back">
-            Full sun<br>
-            2'-3' between plants<br>
-            Water 2-3 times per week<br>
-            Non-toxic to pets<br>
-        </div>
     </div>
 </div>
 <div class="flashcard" onclick="flipCard(this)" id="Veggie">
     <div class="flashcard-inner">
         <div class="flashcard-front">
+            <img src="Images/Squash.jpg"/>
+        </div>
+        <div class="flashcard-back">
             Squash
         </div>
-        <div class="flashcard-back">
-            Full sun<br>
-            2'-3' between plants<br>
-            Water 2-3 times per week<br>
-            Non-toxic to pets<br>
-        </div>
     </div>
 </div>
 <div class="flashcard" onclick="flipCard(this)" id="Veggie">
     <div class="flashcard-inner">
         <div class="flashcard-front">
+            <img src="Images/BellPepper.jpg"/>
+        </div>
+        <div class="flashcard-back">
             Bell Pepper
         </div>
-        <div class="flashcard-back">
-            Full sun<br>
-            18"-24" between plants<br>
-            Water 2-3 times per week<br>
-            Non-toxic to pets<br>
-        </div>
     </div>
 </div>
 <div class="flashcard" onclick="flipCard(this)" id="Veggie">
     <div class="flashcard-inner">
         <div class="flashcard-front">
+            <img src="Images/Garlic.jpg"/>
+        </div>
+        <div class="flashcard-back">
             Garlic
         </div>
-        <div class="flashcard-back">
-            Full sun<br>
-            4"-6" between plants<br>
-            Water 1-2 times per week<br>
-            Toxic to pets<br>
-        </div>
     </div>
 </div>
 <div class="flashcard" onclick="flipCard(this)" id="Veggie">
     <div class="flashcard-inner">
         <div class="flashcard-front">
-            Lettuce
+            <img src="Images/Lettuce.jpg"/>
         </div>
         <div class="flashcard-back">
-            Full to partial sun<br>
-            6"-12" between plants<br>
-            Water 2-3 times per week<br>
-            Non-toxic to pets<br>
+            Lettuce
         </div>
     </div>
 </div>
@@ -429,66 +363,6 @@
 <script>
     function flipCard(card) {
         card.classList.toggle('flip');
-    }
-
-    function filterFruits() {
-        let elementsVeggie = document.querySelectorAll("#Veggie");
-        elementsVeggie.forEach(element => {
-            element.style.display = 'none';
-        });
-        let elementsHerb = document.querySelectorAll("#Herb");
-        elementsHerb.forEach(element => {
-            element.style.display = 'none';
-        });
-        let elementsFlower = document.querySelectorAll("#Flower");
-        elementsFlower.forEach(element => {
-            element.style.display = 'none';
-        });
-    }
-
-    function filterVeggie() {
-        let elementsFruit = document.querySelectorAll("#Fruit");
-        elementsFruit.forEach(element => {
-            element.style.display = 'none';
-        });
-        let elementsHerb = document.querySelectorAll("#Herb");
-        elementsHerb.forEach(element => {
-            element.style.display = 'none';
-        });
-        let elementsFlower = document.querySelectorAll("#Flower");
-        elementsFlower.forEach(element => {
-            element.style.display = 'none';
-        });
-    }
-
-    function filterHerbs() {
-        let elementsVeggie = document.querySelectorAll("#Veggie");
-        elementsVeggie.forEach(element => {
-            element.style.display = 'none';
-        });
-        let elementsFruit = document.querySelectorAll("#Fruit");
-        elementsFruit.forEach(element => {
-            element.style.display = 'none';
-        });
-        let elementsFlower = document.querySelectorAll("#Flower");
-        elementsFlower.forEach(element => {
-            element.style.display = 'none';
-        });
-    }
-
-    function filterFlower() {
-        let elementsVeggie = document.querySelectorAll("#Veggie");
-        elementsVeggie.forEach(element => {
-            element.style.display = 'none';
-        });
-        let elementsHerb = document.querySelectorAll("#Herb");
-        elementsHerb.forEach(element => {
-            element.style.display = 'none';
-        });
-        let elementsFruit = document.querySelectorAll("#Fruit");
-        elementsFruit.forEach(element => {
-            element.style.display = 'none';
-        });
     }
 </script>
 </html>
