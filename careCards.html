@@ -6,7 +6,7 @@
         justify-content: center;
         align-items: center;
         height: 100vh;
-        background-color: #f4f4f9;
+        background-color: #63264A;
         margin: 0;
     }
 
@@ -18,10 +18,10 @@
     }
 
     .flashcard {
-        width: 150px;
-        height: 150px;
-        background-color: #4CAF50;
-        color: white;
+        width: 350px;
+        height: 250px;
+        background-color: #CBEAA6;
+        color: black;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -57,20 +57,104 @@
 
     .flashcard-back {
         transform: rotateY(180deg);
-        background-color: #2196F3;
+        background-color: #CBEAA6;
     }
 </style>
 <div class="flashcard-container">
-    <div class="flashcard" onclick="flipCard(this)">
+    <!--Start of herb flashcards-->
+    <div class="flashcard" onclick="flipCard(this)" name="Herb">
         <div class="flashcard-inner">
             <div class="flashcard-front">
-                Plant 1
+                Thyme
             </div>
             <div class="flashcard-back">
-                Info on Plant 1
+                Full sun<br>
+                Low water<br>
+                Non-toxic to pets <br>
+                Grows best in Western U.S.
             </div>
         </div>
     </div>
+    <div class="flashcard" onclick="flipCard(this)" name="Herb">
+        <div class="flashcard-inner">
+            <div class="flashcard-front">
+                Rosemary
+            </div>
+            <div class="flashcard-back">
+                Full sun<br>
+                Low to moderate water<br>
+                Toxic to pets<br>
+                Grows best in Southwest U.S.
+            </div>
+        </div>
+    </div>
+    <div class="flashcard" onclick="flipCard(this)" name="Herb">
+        <div class="flashcard-inner">
+            <div class="flashcard-front">
+                Oregano
+            </div>
+            <div class="flashcard-back">
+                Full sun<br>
+                Low to moderate water<br>
+                Non-toxic to pets<br>
+                Grows best in Southwest U.S.
+            </div>
+        </div>
+    </div>
+    <div class="flashcard" onclick="flipCard(this)" name="Herb">
+        <div class="flashcard-inner">
+            <div class="flashcard-front">
+                Basil
+            </div>
+            <div class="flashcard-back">
+                Full sun<br>
+                Moderate water - keep soil moist<br>
+                Non-toxic to pets<br>
+                Grows best in Southeast U.S.
+            </div>
+        </div>
+    </div>
+    <div class="flashcard" onclick="flipCard(this)" name="Herb">
+        <div class="flashcard-inner">
+            <div class="flashcard-front">
+                Mint
+            </div>
+            <div class="flashcard-back">
+                Patial to full sun<br>
+                High water<br>
+                Non-toxic to pets<br>
+                Grows best in Midwest U.S.
+            </div>
+        </div>
+    </div>
+    <div class="flashcard" onclick="flipCard(this)" name="Herb">
+        <div class="flashcard-inner">
+            <div class="flashcard-front">
+                Parsley
+            </div>
+            <div class="flashcard-back">
+                Partial to full sun<br>
+                Moderate water<br>
+                Slightly toxic to pets<br>
+                Grows best in Northeast U.S.
+            </div>
+        </div>
+    </div>
+<!--End of herb flashcards-->
+<!--Start of flower flashcards-->
+<div class="flashcard" onclick="flipCard(this)" name="Flower">
+    <div class="flashcard-inner">
+        <div class="flashcard-front">
+            Milkweed
+        </div>
+        <div class="flashcard-back">
+            Partial to full sun<br>
+            Moderate water<br>
+            Slightly toxic to pets<br>
+            Grows best in Northeast U.S.
+        </div>
+    </div>
+</div>
 </div>
 
 
