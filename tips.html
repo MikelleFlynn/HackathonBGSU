@@ -4,6 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tips-and-Tricks</title>
+
+    <style>
+
+        h1 {
+            font-family: 'Garamond';
+            text-align: center;
+        }
+
+        h2 {
+            font-family: 'Garamond';
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 24px;
+        }
+
+        nav ul li a:hover {
+            border-color: orchid;
+            background-color: rgba(249, 100, 209, 0.1);
+        }
+
+    </style>
 </head>
 <body>
     <!-- TODO: add an intro explaing the purpose of the page-->
@@ -11,9 +49,11 @@
     <p>[this is filler text for a little intro]</p>
 
     <nav>
-        <a href="#garden setup">Not sure how to get started?</a>
-        <a href="#compost">Want composting tips?</a> |
-        <a href="#indoor gardening">Don't have yard space?</a> |
+        <ul>
+            <li><a href="#garden setup">Not sure how to get started?</a></li>
+            <li><a href="#compost">Want composting tips?</a></li>
+            <li><a href="#indoor gardening">Don't have yard space?</a></li>
+        </ul>
       </nav>
 
     <!-- TODO: add actual information on garden setup-->
