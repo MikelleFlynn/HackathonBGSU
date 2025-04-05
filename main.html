@@ -11,10 +11,13 @@
 
     <div class="logo">HackathonBGSU</div>
     
-    <div class="search-box">
-        <input type="text" id="plantInput" placeholder="Search plants..." />
-        <button onclick="searchPlants()">🔍</button>
-    </div>
+    <form class="search-box" onsubmit="searchPlants(); return false;">
+      <div class="search-wrapper">
+        <input type="text" id="plantInput" placeholder="Search plants..." oninput="showSuggestions()" autocomplete="off" />
+        <div id="suggestions" class="suggestions-box"></div>
+      </div>
+      <button type="submit">🔍</button>
+    </form>    
 
     <nav>
       <div class="dropdown">
@@ -46,8 +49,6 @@
     </nav>
   </div>
 
-  <div id="resultsContainer"></div>
-
   <div>
     <img class="banner" src="Images/banner.jpg" />
   </div>
@@ -71,9 +72,26 @@
   </div>
 
   <script>
+    console.log("Top bar website loaded");
+  
+    // Optional: extra safe reset
+    window.onload = () => {
+      const resultsBox = document.getElementById("resultsContainer");
+      if (resultsBox) resultsBox.style.display = "none";
+    };
+  </script>
+  
+  <script>
     // Basic JavaScript functionality can be added here
     console.log("Top bar website loaded");
   </script>
   <script src="SearchFunction/search.js"></script>
+</div>
+
+  <div id="resultsContainer" class="results-float">
+    <button onclick="closeResults()" class="close-btn">×</button>
+    <div id="resultsWrapper"></div> <!-- where results go -->
+  </div>
+   
 </body>
 </html>
