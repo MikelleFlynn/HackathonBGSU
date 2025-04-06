@@ -63,10 +63,8 @@ function showSuggestions() {
         const item = document.createElement("div");
         item.textContent = plant.name || "Unknown Plant";
         item.onclick = () => {
-          document.getElementById("plantInput").value = plant.name;
-          suggestionsBox.style.display = "none";
-          searchPlants();
-        };
+          window.location.href = `SearchFunction/plant.html?id=${plant.id}`;
+        };        
         suggestionsBox.appendChild(item);
       });
 
@@ -78,22 +76,17 @@ function showSuggestions() {
   }, 300); // debounce by 300ms
 }
 
-
 function displayResults(plants) {
   const container = document.getElementById("resultsContainer");
 
-  // Clear only the plant results — not the whole container
-  // So first, make sure the container has an inner wrapper:
+  // Get or create the inner wrapper
   let resultsWrapper = document.getElementById("resultsWrapper");
-
-  // If it doesn't exist yet, create it
   if (!resultsWrapper) {
     resultsWrapper = document.createElement("div");
     resultsWrapper.id = "resultsWrapper";
     container.appendChild(resultsWrapper);
   }
 
-  // Now clear only the inner results, not the close button
   resultsWrapper.innerHTML = "";
 
   if (plants.length === 0) {
@@ -107,8 +100,10 @@ function displayResults(plants) {
     card.classList.add("plant-card");
 
     card.innerHTML = `
-      <h3>${plant.name || "Unknown Name"}</h3>
-      <p><strong>Scientific:</strong> ${plant.scientific_name || "N/A"}</p>
+      <a href="SearchFunction/plant.html?id=${plant.id}" class="plant-link">
+        <h3>${plant.name || "Unknown Name"}</h3>
+        <p><strong>Scientific:</strong> ${plant.scientific_name || "N/A"}</p>
+      </a>
     `;
 
     resultsWrapper.appendChild(card);
