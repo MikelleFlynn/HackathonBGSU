@@ -1,40 +1,71 @@
-# HackathonBGSU - Gardenology
+# HackathonBGSU – Gardenology
 
-Team name: AllVibesNoWaste
-Track: Sustainability
-Members: Mikelle Flynn, Austin Opsomer, Mia Howard, Megan Brown
+**Team Name:** AllVibesNoWaste  
+**Track:** Sustainability  
+**Team Members:** Mikelle Flynn, Austin Opsomer, Mia Howard, Megan Brown
 
-About:
-    Gardenology is a web app that helps users learn about plants, find gardening tips, and build their own virtual garden. It connects to the Permapeople API for plant data, supports search and categorization, and includes interactive features like saving plants to a personal garden.
+## About
 
-Features:
-    - Search for plants by name
-    - Browse categorized plants (Herbs, Flowers, etc)
-    - Save and remove plants from My Garden
-    - View detailed care info for a wide variety of plants
-    - Browse tips and tricks to build a sustainable garden
-    - Play games to level up your sustainability knowledge!
-    - Contact our team with any questions
+Gardenology is a web app that helps users explore plant care, discover sustainable gardening tips, and build their own virtual garden. It connects to the Permapeople API to provide rich plant data and supports search, categorization, and interactive features like "My Garden" to personalize the experience.
 
-Setup:
-    1. If Node.js is not installed, install latest LTS version and run these in terminal:
-        - node -v # Checks if node is installed
-        - nvm -v # Checks if nvm is installed
-        - Navigate to project folder and run:
-            * npm init -y # Initialize node project
-            * npm install express cors dotenv # Install necessary packages
+## Features
 
-    2. API key is needed for access to permapeople.org database:
-        - Request key from permapeople.org website (has instructions on website)
-        - Create ".env" file in project root
-        - Store KEY_ID = <your_key> and KEY_SECRET = <your_ID>
+- Search for plants by name  
+- Browse categorized plants (Herbs, Flowers, Produce, All Plants)  
+- View detailed care information (sunlight, soil, watering, native region)  
+- Save and remove plants from My Garden  
+- Explore tips and tricks to create a sustainable garden  
+- Play interactive games to boost your gardening knowledge  
+- Contact the team with questions or feedback  
 
-    3. Run "node server.js" before opening live server extension on VSCode
+## Setup Instructions
 
-Future Developement:
-    - Add more filtering functionalities
-    - Fine-tune current features
-    - Add a way to track milestones for your Garden
-    - Add reminder notifications (watering, planting, etc)
-    - Add Garden planner
-    - Add more mini games
+### 1. Install Node.js (if not already)
+
+Make sure you're using the latest LTS version:
+
+```bash
+node -v      # Verify Node.js  
+nvm -v       # Verify Node Version Manager (optional)  
+```
+
+Then, in the project folder:
+
+```bash
+npm init -y                      # Initialize Node project  
+npm install express cors dotenv  # Install required packages  
+```
+
+### 2. Configure API Access
+
+- Request an API key from https://permapeople.org  
+- Create a `.env` file in the project root and add:
+
+```env
+KEY_ID=your_key_here  
+KEY_SECRET=your_secret_here  
+```
+
+### 3. Run the App
+
+Start the server:
+
+```bash
+node server.js  
+```
+
+Then, open the frontend using the Live Server extension in VSCode (open `main.html`).
+
+## Future Development
+
+- Add advanced filtering (climate zone, season, difficulty)  
+- Fine-tune UI/UX and responsiveness  
+- Add milestones and plant growth tracking  
+- Add care reminders (watering, planting)  
+- Add more mini-games and educational features  
+- Add a garden layout planner  
+
+## Credits
+
+Plant data provided by the [Permapeople API](https://permapeople.org).  
+This project would not be possible without their open-source plant database.
