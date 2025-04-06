@@ -26,7 +26,7 @@
   .topbar nav a {
     color: #63264A;
     text-decoration: none;
-    margin-left: 50px;
+    padding: 0 15px;
     font-size: 1.3em;
   }
 
@@ -59,15 +59,16 @@
 
 /* Show the dropdown content on hover */
   .dropdown:hover .dropdown-content {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
   }
 
 /* Links inside the dropdown */
   .dropdown-content a {
     color: #63264A;
-    padding: 5px 15px;
+    padding-bottom: 10px;
     text-decoration: none;
-    display: block;
   }
 
   .dropdown-content a:hover {
