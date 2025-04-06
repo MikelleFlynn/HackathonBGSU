@@ -207,6 +207,12 @@
   width: 200px; /* or whatever your input width is */
 }
 
+.search-box input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #a7477f55; /* soft purple glow */
+  border: 1px solid #a7477f;
+}
+
 .suggestions-box {
   position: absolute;
   top: 100%;

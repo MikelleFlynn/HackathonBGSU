@@ -33,3 +33,21 @@ app.post('/api/search', async (req, res) => {
 app.listen(PORT, () => {
   console.log(`Backend running at http://localhost:${PORT}`);
 });
+
+app.get('/api/plant/:id', async (req, res) => {
+  const plantId = req.params.id;
+  try {
+    const response = await fetch(`https://permapeople.org/api/plants/${plantId}`, {
+      headers: {
+        "x-permapeople-key-id": process.env.KEY_ID,
+        "x-permapeople-key-secret": process.env.KEY_SECRET
+      }
+    });
+    const data = await response.json();
+    res.json(data);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Failed to fetch plant details' });
+  }
+});
+
