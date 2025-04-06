@@ -1,296 +1,309 @@
 <!DOCTYPE html>
-<head><link rel="stylesheet" href="careCardsStyle.css"></head>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Care Cards</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
 
-<div class="flashcard-container">
-    <!--Start of herb flashcards-->
-    <div class="flashcard" onclick="flipCard(this)" id="Thyme">
-        <div class="flashcard-inner">
-            <div class="flashcard-front">
-                <img src="Images/Thyme.jpg"/>
-            </div>
-            <div class="flashcard-back">
-                Thyme
-            </div>
-        </div>
-    </div>
-    <div class="flashcard" onclick="flipCard(this)" id="Rosemary">
-        <div class="flashcard-inner">
-            <div class="flashcard-front">
-                <img src="Images/Rosemary.jpg"/>
-            </div>
-            <div class="flashcard-back">
-                Rosemary
-            </div>
-        </div>
-    </div>
-    
-    <div class="flashcard" onclick="flipCard(this)" id="Herb">
-        <div class="flashcard-inner">
-            <div class="flashcard-front">
-                <img src="Images/Oregano.jpg"/>
-            </div>
-            <div class="flashcard-back">
-                Oregano
-            </div>
-        </div>
-    </div>
-    <div class="flashcard" onclick="flipCard(this)" id="Herb">
-        <div class="flashcard-inner">
-            <div class="flashcard-front">
-                <img src="Images/Basil.jpg"/>
-            </div>
-            <div class="flashcard-back">
-                Basil
-            </div>
-        </div>
-    </div>
-    <div class="flashcard" onclick="flipCard(this)" id="Herb">
-        <div class="flashcard-inner">
-            <div class="flashcard-front">
-                <img src="Images/Mint.jpg"/>
-            </div>
-            <div class="flashcard-back">
-                Mint
-            </div>
-        </div>
-    </div>
-    <div class="flashcard" onclick="flipCard(this)" id="Herb">
-        <div class="flashcard-inner">
-            <div class="flashcard-front">
-                <img src="Images/Parsley.jpg"/>
-            </div>
-            <div class="flashcard-back">
-                Parsley
-            </div>
-        </div>
-    </div>
-<!--End of herb flashcards
+    <body>
+        <div id="navbar-container"></div>
 
-Start of flower flashcards-->
+        <link rel="stylesheet" href="careCardsStyle.css" />
+        <div class="flashcard-container">
+            <!--Start of herb flashcards-->
+            <div class="flashcard" onclick="flipCard(this)" id="Thyme">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <img src="Images/Thyme.jpg"/>
+                    </div>
+                    <div class="flashcard-back">
+                        Thyme
+                    </div>
+                </div>
+            </div>
+            <div class="flashcard" onclick="flipCard(this)" id="Rosemary">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <img src="Images/Rosemary.jpg"/>
+                    </div>
+                    <div class="flashcard-back">
+                        Rosemary
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flashcard" onclick="flipCard(this)" id="Herb">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <img src="Images/Oregano.jpg"/>
+                    </div>
+                    <div class="flashcard-back">
+                        Oregano
+                    </div>
+                </div>
+            </div>
+            <div class="flashcard" onclick="flipCard(this)" id="Herb">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <img src="Images/Basil.jpg"/>
+                    </div>
+                    <div class="flashcard-back">
+                        Basil
+                    </div>
+                </div>
+            </div>
+            <div class="flashcard" onclick="flipCard(this)" id="Herb">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <img src="Images/Mint.jpg"/>
+                    </div>
+                    <div class="flashcard-back">
+                        Mint
+                    </div>
+                </div>
+            </div>
+            <div class="flashcard" onclick="flipCard(this)" id="Herb">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <img src="Images/Parsley.jpg"/>
+                    </div>
+                    <div class="flashcard-back">
+                        Parsley
+                    </div>
+                </div>
+            </div>
+        <!--End of herb flashcards
 
-<div class="flashcard" onclick="flipCard(this)" id="Flower">
-    <div class="flashcard-inner">
-        <div class="flashcard-front">
-            <img src="Images/Milkweed.jpg"/>
-        </div>
-        <div class="flashcard-back">
-            Milkweed
-        </div>
-    </div>
-</div>
-<div class="flashcard" onclick="flipCard(this)" id="Flower">
-    <div class="flashcard-inner">
-        <div class="flashcard-front">
-            <img src="Images/Lavender.jpg"/>
-        </div>
-        <div class="flashcard-back">
-            Lavender
-        </div>
-    </div>
-</div>
-<div class="flashcard" onclick="flipCard(this)" id="Flower">
-    <div class="flashcard-inner">
-        <div class="flashcard-front">
-            <img src="Images/SweetPea.jpg"/>
-        </div>
-        <div class="flashcard-back">
-            Sweet Pea
-        </div>
-    </div>
-</div>
-<div class="flashcard" onclick="flipCard(this)" id="Flower">
-    <div class="flashcard-inner">
-        <div class="flashcard-front">
-            <img src="Images/Allium.jpg"/>
-        </div>
-        <div class="flashcard-back">
-            Allium
-        </div>
-    </div>
-</div>
-<div class="flashcard" onclick="flipCard(this)" id="Flower">
-    <div class="flashcard-inner">
-        <div class="flashcard-front">
-            <img src="Images/BlueBonnet.jpg"/>
-        </div>
-        <div class="flashcard-back">
-            Blue Bonnet
-        </div>
-    </div>
-</div>
-<div class="flashcard" onclick="flipCard(this)" id="Flower">
-    <div class="flashcard-inner">
-        <div class="flashcard-front">
-            <img src="Images/Carnation.jpg"/>
-        </div>
-        <div class="flashcard-back">
-            Carnation
-        </div>
-    </div>
-</div>
-<div class="flashcard" onclick="flipCard(this)" id="Flower">
-    <div class="flashcard-inner">
-        <div class="flashcard-front">
-            <img src="Images/BleedingHeart.jpg"/>
-        </div>
-        <div class="flashcard-back">
-            Bleeding Heart
-        </div>
-    </div>
-</div>
-<div class="flashcard" onclick="flipCard(this)" id="Flower">
-    <div class="flashcard-inner">
-        <div class="flashcard-front">
-            <img src="Images/Hydrangea.jpg"/>
-        </div>
-        <div class="flashcard-back">
-            Hydrangea
-        </div>
-    </div>
-</div>
-<div class="flashcard" onclick="flipCard(this)" id="Flower">
-    <div class="flashcard-inner">
-        <div class="flashcard-front">
-            <img src="Images/Daylily.jpg"/>
-        </div>
-        <div class="flashcard-back">
-            Daylily
-        </div>
-    </div>
-</div>
-<div class="flashcard" onclick="flipCard(this)" id="Flower">
-    <div class="flashcard-inner">
-        <div class="flashcard-front">
-            <img src="Images/BlackEyedSusan.jpg"/>
-        </div>
-        <div class="flashcard-back">
-            Black-Eyed Susan
-        </div>
-    </div>
-</div>
-<!--End of Flower Flashcards
+        Start of flower flashcards-->
 
-Start of Fruits Flashcards-->
-<div class="flashcard" onclick="flipCard(this)" id="Fruit">
-    <div class="flashcard-inner">
-        <div class="flashcard-front">
-            <img src="Images/Tomato.jpg"/>
+        <div class="flashcard" onclick="flipCard(this)" id="Flower">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <img src="Images/Milkweed.jpg"/>
+                </div>
+                <div class="flashcard-back">
+                    Milkweed
+                </div>
+            </div>
         </div>
-        <div class="flashcard-back">
-            Tomato
+        <div class="flashcard" onclick="flipCard(this)" id="Flower">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <img src="Images/Lavender.jpg"/>
+                </div>
+                <div class="flashcard-back">
+                    Lavender
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-<div class="flashcard" onclick="flipCard(this)" id="Fruit">
-    <div class="flashcard-inner">
-        <div class="flashcard-front">
-            <img src="Images/Strawberry.jpg"/>
+        <div class="flashcard" onclick="flipCard(this)" id="Flower">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <img src="Images/SweetPea.jpg"/>
+                </div>
+                <div class="flashcard-back">
+                    Sweet Pea
+                </div>
+            </div>
         </div>
-        <div class="flashcard-back">
-            Strawberry
+        <div class="flashcard" onclick="flipCard(this)" id="Flower">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <img src="Images/Allium.jpg"/>
+                </div>
+                <div class="flashcard-back">
+                    Allium
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-<div class="flashcard" onclick="flipCard(this)" id="Fruit">
-    <div class="flashcard-inner">
-        <div class="flashcard-front">
-            <img src="Images/Blueberry.jpg"/>
+        <div class="flashcard" onclick="flipCard(this)" id="Flower">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <img src="Images/BlueBonnet.jpg"/>
+                </div>
+                <div class="flashcard-back">
+                    Blue Bonnet
+                </div>
+            </div>
         </div>
-        <div class="flashcard-back">
-            Blueberry
+        <div class="flashcard" onclick="flipCard(this)" id="Flower">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <img src="Images/Carnation.jpg"/>
+                </div>
+                <div class="flashcard-back">
+                    Carnation
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-<div class="flashcard" onclick="flipCard(this)" id="Fruit">
-    <div class="flashcard-inner">
-        <div class="flashcard-front">
-            <img src="Images/Blackberry.jpg"/>
+        <div class="flashcard" onclick="flipCard(this)" id="Flower">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <img src="Images/BleedingHeart.jpg"/>
+                </div>
+                <div class="flashcard-back">
+                    Bleeding Heart
+                </div>
+            </div>
         </div>
-        <div class="flashcard-back">
-            Blackberry
+        <div class="flashcard" onclick="flipCard(this)" id="Flower">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <img src="Images/Hydrangea.jpg"/>
+                </div>
+                <div class="flashcard-back">
+                    Hydrangea
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-<div class="flashcard" onclick="flipCard(this)" id="Fruit">
-    <div class="flashcard-inner">
-        <div class="flashcard-front">
-            <img src="Images/Lemon.jpg"/>
+        <div class="flashcard" onclick="flipCard(this)" id="Flower">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <img src="Images/Daylily.jpg"/>
+                </div>
+                <div class="flashcard-back">
+                    Daylily
+                </div>
+            </div>
         </div>
-        <div class="flashcard-back">
-            Lemon
+        <div class="flashcard" onclick="flipCard(this)" id="Flower">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <img src="Images/BlackEyedSusan.jpg"/>
+                </div>
+                <div class="flashcard-back">
+                    Black-Eyed Susan
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-<!--End of Fruits Flashcards
+        <!--End of Flower Flashcards
 
-Start of veggies flashcards-->
-<div class="flashcard" onclick="flipCard(this)" id="Veggie">
-    <div class="flashcard-inner">
-        <div class="flashcard-front">
-            <img src="Images/Pea.jpg"/>
+        Start of Fruits Flashcards-->
+        <div class="flashcard" onclick="flipCard(this)" id="Fruit">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <img src="Images/Tomato.jpg"/>
+                </div>
+                <div class="flashcard-back">
+                    Tomato
+                </div>
+            </div>
         </div>
-        <div class="flashcard-back">
-            Pea
+        <div class="flashcard" onclick="flipCard(this)" id="Fruit">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <img src="Images/Strawberry.jpg"/>
+                </div>
+                <div class="flashcard-back">
+                    Strawberry
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-<div class="flashcard" onclick="flipCard(this)" id="Veggie">
-    <div class="flashcard-inner">
-        <div class="flashcard-front">
-            <img src="Images/Zucchini.jpg"/>
+        <div class="flashcard" onclick="flipCard(this)" id="Fruit">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <img src="Images/Blueberry.jpg"/>
+                </div>
+                <div class="flashcard-back">
+                    Blueberry
+                </div>
+            </div>
         </div>
-        <div class="flashcard-back">
-            Zucchini
+        <div class="flashcard" onclick="flipCard(this)" id="Fruit">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <img src="Images/Blackberry.jpg"/>
+                </div>
+                <div class="flashcard-back">
+                    Blackberry
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-<div class="flashcard" onclick="flipCard(this)" id="Veggie">
-    <div class="flashcard-inner">
-        <div class="flashcard-front">
-            <img src="Images/Squash.jpg"/>
+        <div class="flashcard" onclick="flipCard(this)" id="Fruit">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <img src="Images/Lemon.jpg"/>
+                </div>
+                <div class="flashcard-back">
+                    Lemon
+                </div>
+            </div>
         </div>
-        <div class="flashcard-back">
-            Squash
-        </div>
-    </div>
-</div>
-<div class="flashcard" onclick="flipCard(this)" id="Veggie">
-    <div class="flashcard-inner">
-        <div class="flashcard-front">
-            <img src="Images/BellPepper.jpg"/>
-        </div>
-        <div class="flashcard-back">
-            Bell Pepper
-        </div>
-    </div>
-</div>
-<div class="flashcard" onclick="flipCard(this)" id="Veggie">
-    <div class="flashcard-inner">
-        <div class="flashcard-front">
-            <img src="Images/Garlic.jpg"/>
-        </div>
-        <div class="flashcard-back">
-            Garlic
-        </div>
-    </div>
-</div>
-<div class="flashcard" onclick="flipCard(this)" id="Veggie">
-    <div class="flashcard-inner">
-        <div class="flashcard-front">
-            <img src="Images/Lettuce.jpg"/>
-        </div>
-        <div class="flashcard-back">
-            Lettuce
-        </div>
-    </div>
-</div>
+        <!--End of Fruits Flashcards
 
-</div>
+        Start of veggies flashcards-->
+        <div class="flashcard" onclick="flipCard(this)" id="Veggie">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <img src="Images/Pea.jpg"/>
+                </div>
+                <div class="flashcard-back">
+                    Pea
+                </div>
+            </div>
+        </div>
+        <div class="flashcard" onclick="flipCard(this)" id="Veggie">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <img src="Images/Zucchini.jpg"/>
+                </div>
+                <div class="flashcard-back">
+                    Zucchini
+                </div>
+            </div>
+        </div>
+        <div class="flashcard" onclick="flipCard(this)" id="Veggie">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <img src="Images/Squash.jpg"/>
+                </div>
+                <div class="flashcard-back">
+                    Squash
+                </div>
+            </div>
+        </div>
+        <div class="flashcard" onclick="flipCard(this)" id="Veggie">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <img src="Images/BellPepper.jpg"/>
+                </div>
+                <div class="flashcard-back">
+                    Bell Pepper
+                </div>
+            </div>
+        </div>
+        <div class="flashcard" onclick="flipCard(this)" id="Veggie">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <img src="Images/Garlic.jpg"/>
+                </div>
+                <div class="flashcard-back">
+                    Garlic
+                </div>
+            </div>
+        </div>
+        <div class="flashcard" onclick="flipCard(this)" id="Veggie">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <img src="Images/Lettuce.jpg"/>
+                </div>
+                <div class="flashcard-back">
+                    Lettuce
+                </div>
+            </div>
+        </div>
 
+        </div>
+    </body>
 
-<script>
-    function flipCard(card) {
-        card.classList.toggle('flip');
-    }
-</script>
+    <script>
+        function flipCard(card) {
+            card.classList.toggle('flip');
+        }
+    </script>
+
+    <script src="/scripts/loadNavbar.js"></script>
+
 </html>

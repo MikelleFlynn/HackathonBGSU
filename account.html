@@ -3,75 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Login</title>
+  <title>Account</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="topbar">
-        <div class="logo">HackathonBGSU</div>
-        <nav>
-          <div class="dropdown">
-            <a href="main.html">Home</a>
-          </div>
-    
-          <div class="dropdown">
-            <a href="#">Plants▾</a>
-            <div class="dropdown-content">
-              <a href="#">Herbs</a>
-              <a href="#">Flowers</a>
-              <a href="#">Vegetables</a>
-              <a href="#">Fruits</a>
-            </div>
-          </div>
-    
-          <div class="dropdown">
-            <a href="#">Tips▾</a>
-            <div class="dropdown-content">
-              <a href="#">Watering</a>
-              <a href="#">Sunlight</a>
-              <a href="#">Soil</a>
-            </div>
-          </div>
-    
-          <div class="dropdown">
-            <a href="contact.html">Contact</a>
-          </div>
-    
-          <div id="login" class="dropdown">
-            <a href="main.html" id="logout-link">Logout</a>
-          </div>
-        </nav>
-    </div>
-    
+  <div id="navbar-container"></div>
+
+  <script src="/scripts/loadNavbar.js"></script>
+
   <script>
-    const loginLink = document.getElementById("login-link");
     const user = localStorage.getItem("loggedInUser");
 
+    // Redirect to login if not logged in
+    if (!user) {
+      window.location.replace("/login.html");
+    }
+
+    // Wait for navbar to load, then update the nav link to be "Logout"
     document.addEventListener("DOMContentLoaded", () => {
-        const logoutLink = document.getElementById("logout-link");
+      // Poll until navbar is fully loaded and "login-link" exists
+      const waitForNavbar = setInterval(() => {
+        const loginLink = document.getElementById("login-link");
+        if (loginLink) {
+          clearInterval(waitForNavbar); // stop checking once found
 
-        if (!user) {
-            // Not logged in? Redirect to login page.
-            window.location.replace("login.html");
-            return; // Stop the rest of the script
-        }
+          loginLink.textContent = "Logout";
+          loginLink.href = "#";
+          loginLink.id = "logout-link";
 
-        logoutLink.addEventListener('click', (e) => {
+          loginLink.addEventListener("click", (e) => {
             e.preventDefault();
             localStorage.removeItem("loggedInUser");
-            window.location.replace("main.html");
-        });
-
-        // Optional: show/hide nav link dynamically here too
-        if (user) {
-            loginLink.textContent = "Account";
-            loginLink.href = "account.html";
-        } else {
-            loginLink.textContent = "Login";
-            loginLink.href = "login.html";
+            window.location.replace("/main.html");
+          });
         }
+      }, 50); // check every 50ms
     });
-
   </script>
 </body>
 </html>

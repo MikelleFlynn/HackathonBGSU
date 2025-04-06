@@ -59,41 +59,7 @@
   </style>
 </head>
 <body>
-    <div class="topbar">
-        <div class="logo">HackathonBGSU</div>
-        <nav>
-          <div class="dropdown">
-            <a href="main.html">Home</a>
-          </div>
-    
-          <div class="dropdown">
-            <a href="#">Plants▾</a>
-            <div class="dropdown-content">
-              <a href="#">Herbs</a>
-              <a href="#">Flowers</a>
-              <a href="#">Vegetables</a>
-              <a href="#">Fruits</a>
-            </div>
-          </div>
-    
-          <div class="dropdown">
-            <a href="#">Tips▾</a>
-            <div class="dropdown-content">
-              <a href="#">Watering</a>
-              <a href="#">Sunlight</a>
-              <a href="#">Soil</a>
-            </div>
-          </div>
-    
-          <div class="dropdown">
-            <a href="contact.html">Contact</a>
-          </div>
-    
-          <div id="login" class="dropdown">
-            <a href="login.html" id="login-link">Login</a>
-          </div>
-        </nav>
-    </div>
+  <div id="navbar-container"></div>
 
     <div class="login-container">
     <h2>Login</h2>
@@ -120,11 +86,12 @@
 
         if (username === VALID_USERNAME && password === VALID_PASSWORD) {
             localStorage.setItem('loggedInUser', username);
-            window.location.href = "main.html"; // ✅ Don't clear localStorage here
+            window.location.href = "/main.html"; // ✅ Don't clear localStorage here
         } else {
             message.textContent = "Invalid username or password.";
         }
     });
   </script>
+  <script src="/Scripts/loadNavbar.js"></script>
 </body>
 </html>
