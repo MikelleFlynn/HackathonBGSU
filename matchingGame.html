@@ -4,8 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Match Images to Names Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="navbar-container"></div>
+
     <style>
-        body {
+        #matching {
             font-family: Arial, sans-serif;
             display: flex;
             justify-content: center;
@@ -16,7 +21,7 @@
             margin: 0;
         }
 
-        h1 {
+        #matching h1 {
             text-align: center;
         }
 
@@ -78,22 +83,22 @@
             display: none;
         }
     </style>
-</head>
-<body>
 
-    <h1>Match Images to Names</h1>
+    <div id="matching">
+        <h1>Match Images to Names</h1>
 
-    <div class="game-container">
-        <div class="images" id="imageContainer">
-            <!-- Image options will be inserted here -->
+        <div class="game-container">
+            <div class="images" id="imageContainer">
+                <!-- Image options will be inserted here -->
+            </div>
+
+            <div class="names" id="nameContainer">
+                <!-- Name options will be inserted here -->
+            </div>
         </div>
 
-        <div class="names" id="nameContainer">
-            <!-- Name options will be inserted here -->
-        </div>
+        <div class="message" id="message">Congratulations! You've matched all images with names!</div>
     </div>
-
-    <div class="message" id="message">Congratulations! You've matched all images with names!</div>
 
     <script>
         // Define the set of images and names
@@ -245,6 +250,6 @@
         // Initialize the game board
         createGameBoard();
     </script>
-
+    <script src="/Scripts/loadNavbar.js"></script>
 </body>
 </html>
