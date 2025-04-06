@@ -4,20 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Multiple Choice Quiz</title>
+    <link rel="stylesheet" href="/style.css">
+    
+    
+</head>
+<body>
+    <div id="navbar-container"></div>
+
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
+        .container-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
         }
-
         .quiz-container {
             background-color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -72,9 +77,8 @@
             color: red;
         }
     </style>
-</head>
-<body>
 
+    <div class="container-container">
     <div class="quiz-container">
         <h1>Tips and Tricks Quiz</h1>
         <form id="quizForm">
@@ -163,6 +167,7 @@
 
         <div class="result" id="result"></div>
     </div>
+</div>
 
     <script>
         // Correct answers for the quiz
@@ -202,6 +207,6 @@
             resultElement.style.display = 'block';
         });
     </script>
-
+    <script src="/Scripts/loadNavbar.js"></script>
 </body>
 </html>
