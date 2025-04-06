@@ -4,6 +4,8 @@
 **Track:** Sustainability  
 **Team Members:** Mikelle Flynn, Austin Opsomer, Mia Howard, Megan Brown
 
+## Submission link: https://www.loom.com/share/77bc8e5c79b346f5916f82741a0ce5ef?sid=953a4180-de68-43ac-9fac-fbf4be8ab66d
+
 ## About
 
 Gardenology is a web app that helps users explore plant care, discover sustainable gardening tips, and build their own virtual garden. It connects to the Permapeople API to provide rich plant data and supports search, categorization, and interactive features like "My Garden" to personalize the experience.
