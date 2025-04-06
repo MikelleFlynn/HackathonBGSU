@@ -69,3 +69,5 @@ Then, open the frontend using the Live Server extension in VSCode (open `main.ht
 
 Plant data provided by the [Permapeople API](https://permapeople.org).  
 This project would not be possible without their open-source plant database.
+
+Future Developement:
