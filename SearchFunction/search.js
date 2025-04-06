@@ -6,6 +6,8 @@ async function searchPlants() {
     return;
   }
 
+  sessionStorage.setItem("lastSearch", query); // 👈 SAVE search
+  
   try {
     const response = await fetch("http://localhost:3000/api/search", {
       method: "POST",
@@ -27,7 +29,7 @@ let debounceTimer;
 
 function showSuggestions() {
   const input = document.getElementById("plantInput").value.trim();
-  const suggestionsBox = document.getElementById("suggestions");
+  const suggestionsBox = document.getElementById("suggestions"); // ✅ must come first
 
   clearTimeout(debounceTimer); // throttle input
 
@@ -41,30 +43,20 @@ function showSuggestions() {
     try {
       const response = await fetch("http://localhost:3000/api/search", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ q: input })
       });
 
       const data = await response.json();
       const plants = data.plants || [];
 
-      // limit to 5 suggestions
-      const suggestions = plants.slice(0, 5);
-
-      if (suggestions.length === 0) {
-        suggestionsBox.style.display = "none";
-        return;
-      }
-
       suggestionsBox.innerHTML = "";
-      suggestions.forEach(plant => {
+      plants.slice(0, 5).forEach(plant => {
         const item = document.createElement("div");
         item.textContent = plant.name || "Unknown Plant";
         item.onclick = () => {
-          window.location.href = `SearchFunction/plant.html?id=${plant.id}`;
-        };        
+          window.location.href = `SearchFunction/plant.html?id=${plant.id}&source=search`;
+        };
         suggestionsBox.appendChild(item);
       });
 
@@ -73,8 +65,10 @@ function showSuggestions() {
       console.error("Suggestion error:", error);
       suggestionsBox.style.display = "none";
     }
-  }, 300); // debounce by 300ms
+  }, 300);
 }
+
+
 
 function displayResults(plants) {
   const container = document.getElementById("resultsContainer");
@@ -98,13 +92,19 @@ function displayResults(plants) {
   plants.forEach(plant => {
     const card = document.createElement("div");
     card.classList.add("plant-card");
-
+    
+    const isSaved = (JSON.parse(localStorage.getItem("myGarden") || "[]")).includes(plant.id);
+    const buttonLabel = isSaved ? "✔" : "+";
     card.innerHTML = `
-      <a href="SearchFunction/plant.html?id=${plant.id}" class="plant-link">
-        <h3>${plant.name || "Unknown Name"}</h3>
+      <div class="card-header">
+        <button class="add-button" onclick="toggleGarden('${plant.id}', this)">${buttonLabel}</button>
+      </div>
+      <a href="SearchFunction/plant.html?id=${plant.id}&source=search" class="plant-link">
+        <h3>${plant.name}</h3>
         <p><strong>Scientific:</strong> ${plant.scientific_name || "N/A"}</p>
       </a>
     `;
+      
 
     resultsWrapper.appendChild(card);
   });
@@ -136,5 +136,38 @@ document.addEventListener("click", function (e) {
     box.style.display = "none";
   }
 });
+
+function toggleGarden(plantId, button, event) {
+  event?.stopPropagation();
+  event?.preventDefault();
+
+  const saved = JSON.parse(localStorage.getItem("myGarden") || "[]");
+  const index = saved.indexOf(plantId);
+
+  if (index === -1) {
+    saved.push(plantId);
+    localStorage.setItem("myGarden", JSON.stringify(saved));
+    button.textContent = "✔ Added";
+    button.classList.add("added");
+  } else {
+    saved.splice(index, 1);
+    localStorage.setItem("myGarden", JSON.stringify(saved));
+    button.textContent = "+";
+    button.classList.remove("added");
+  }
+}
+
+
+function addToGarden(plantId) {
+  const saved = JSON.parse(localStorage.getItem("myGarden") || "[]");
+  if (!saved.includes(plantId)) {
+    saved.push(plantId);
+    localStorage.setItem("myGarden", JSON.stringify(saved));
+    alert("🌱 Added to My Garden!");
+  } else {
+    alert("✅ Already in your garden.");
+  }
+}
+
 
 

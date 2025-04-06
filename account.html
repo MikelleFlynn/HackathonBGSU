@@ -5,27 +5,110 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Account</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f6f6f6;
+      margin: 0;
+      padding: 0;
+    }
+
+    #myGardenContainer {
+      max-width: 1100px;
+      margin: 50px auto;
+      background-color: white;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    #myGardenContainer h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #2e7d32;
+      font-size: 32px;
+    }
+
+    #gardenGrid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 25px;
+    }
+
+    .plant-card {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: transform 0.2s ease;
+    }
+
+    .plant-card:hover {
+      transform: scale(1.02);
+    }
+
+    .plant-card h3 {
+      color: #2e7d32;
+      margin-bottom: 10px;
+    }
+
+    .plant-card p {
+      margin: 6px 0;
+      color: #444;
+      font-size: 14px;
+    }
+
+    .plant-card a {
+      text-decoration: none;
+    }
+
+    .plant-card button {
+      margin-top: 12px;
+      background-color: #ffcdd2;
+      color: #c62828;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 14px;
+      transition: background-color 0.2s ease;
+    }
+
+    .plant-card button:hover {
+      background-color: #ef9a9a;
+    }
+
+    @media (max-width: 600px) {
+      #myGardenContainer {
+        padding: 25px;
+        margin: 20px;
+      }
+    }
+  </style>
 </head>
 <body>
   <div id="navbar-container"></div>
 
+  <div id="myGardenContainer">
+    <h2>🌿 My Garden</h2>
+    <div id="gardenGrid"></div>
+  </div>
+  
   <script src="/scripts/loadNavbar.js"></script>
 
   <script>
     const user = localStorage.getItem("loggedInUser");
 
-    // Redirect to login if not logged in
     if (!user) {
       window.location.replace("/login.html");
     }
 
-    // Wait for navbar to load, then update the nav link to be "Logout"
     document.addEventListener("DOMContentLoaded", () => {
-      // Poll until navbar is fully loaded and "login-link" exists
       const waitForNavbar = setInterval(() => {
         const loginLink = document.getElementById("login-link");
         if (loginLink) {
-          clearInterval(waitForNavbar); // stop checking once found
+          clearInterval(waitForNavbar);
 
           loginLink.textContent = "Logout";
           loginLink.href = "#";
@@ -37,8 +120,49 @@
             window.location.replace("/main.html");
           });
         }
-      }, 50); // check every 50ms
+      }, 50);
     });
+
+    async function loadMyGarden() {
+      const gardenGrid = document.getElementById("gardenGrid");
+      gardenGrid.innerHTML = "";
+
+      const saved = JSON.parse(localStorage.getItem("myGarden") || "[]");
+      if (saved.length === 0) {
+        gardenGrid.innerHTML = "<p>No plants saved to your garden yet.</p>";
+        return;
+      }
+
+      for (const id of saved) {
+        try {
+          const res = await fetch(`http://localhost:3000/api/plant/${id}`);
+          const plant = await res.json();
+
+          const card = document.createElement("div");
+          card.className = "plant-card";
+          card.innerHTML = `
+            <a href="../SearchFunction/plant.html?id=${plant.id}">
+              <h3>${plant.name}</h3>
+              <p><strong>Scientific:</strong> ${plant.scientific_name || "N/A"}</p>
+            </a>
+            <button onclick="removeFromGarden('${plant.id}')">❌ Remove</button>
+          `;
+          gardenGrid.appendChild(card);
+        } catch (err) {
+          console.error("Failed to load plant:", err);
+        }
+      }
+    }
+
+    function removeFromGarden(plantId) {
+      let saved = JSON.parse(localStorage.getItem("myGarden") || "[]");
+      saved = saved.filter(id => id !== plantId);
+      localStorage.setItem("myGarden", JSON.stringify(saved));
+      loadMyGarden();
+    }
+
+    document.addEventListener("DOMContentLoaded", loadMyGarden);
   </script>
 </body>
 </html>
+
