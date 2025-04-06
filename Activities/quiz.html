@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Choice Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .quiz-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        .quiz-container h1 {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .question {
+            margin-bottom: 15px;
+        }
+
+        .question p {
+            font-size: 18px;
+        }
+
+        .question input {
+            margin-right: 10px;
+        }
+
+        .quiz-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .quiz-container button:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            font-size: 18px;
+            text-align: center;
+            margin-top: 20px;
+            display: none;
+        }
+
+        .result.success {
+            color: green;
+        }
+
+        .result.failure {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="quiz-container">
+        <h1>Tips and Tricks Quiz</h1>
+        <form id="quizForm">
+            <div class="question">
+                <p>1. Which is not a key component of composting?</p>
+                <label>
+                    <input type="radio" name="q1" value="Greens"> Greens
+                </label><br>
+                <label>
+                    <input type="radio" name="q1" value="Browns"> Browns
+                </label><br>
+                <label>
+                    <input type="radio" name="q1" value="Air"> Air
+                </label><br>
+                <label>
+                    <input type="radio" name="q1" value="Grease"> Grease
+                </label>
+            </div>
+
+            <div class="question">
+                <p>2. What is a main advantage of a raised garden bed?</p>
+                <label>
+                    <input type="radio" name="q2" value="growing"> Longer growing season
+                </label><br>
+                <label>
+                    <input type="radio" name="q2" value="cheaper"> Cheaper to create
+                </label><br>
+                <label>
+                    <input type="radio" name="q2" value="compaction"> More soil compaction
+                </label><br>
+                <label>
+                    <input type="radio" name="q2" value="watering"> Less watering is needed
+                </label>
+            </div>
+
+            <div class="question">
+                <p>3. Which is not a benefit to indoor gardening?</p>
+                <label>
+                    <input type="radio" name="q3" value="productivity"> Improve productivity
+                </label><br>
+                <label>
+                    <input type="radio" name="q3" value="illness"> Help you recover from illness
+                </label><br>
+                <label>
+                    <input type="radio" name="q3" value="creativity"> Improve creativity
+                </label><br>
+                <label>
+                    <input type="radio" name="q3" value="spacing"> Save space
+                </label>
+            </div>
+
+            <div class="question">
+                <p>4. What is not a good plant to keep in your windowsill?</p>
+                <label>
+                    <input type="radio" name="q4" value="Herbs"> Herbs
+                </label><br>
+                <label>
+                    <input type="radio" name="q4" value="potatoes"> Potatoes
+                </label><br>
+                <label>
+                    <input type="radio" name="q4" value="leafy"> Leafy greens
+                </label><br>
+                <label>
+                    <input type="radio" name="q4" value="succulents"> Succulents
+                </label>
+            </div>
+
+            <div class="question">
+                <p>5. What is not needed to create a raised garden bed?</p>
+                <label>
+                    <input type="radio" name="q5" value="paint"> Paint
+                </label><br>
+                <label>
+                    <input type="radio" name="q5" value="wood"> Wood
+                </label><br>
+                <label>
+                    <input type="radio" name="q5" value="screws"> Screws
+                </label><br>
+                <label>
+                    <input type="radio" name="q5" value="soil"> Soil
+                </label>
+            </div>
+
+            <button type="submit">Submit Quiz</button>
+        </form>
+
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        // Correct answers for the quiz
+        const correctAnswers = {
+            q1: 'Grease',
+            q2: 'growing',
+            q3: 'creativity',
+            q4: 'potatoes',
+            q5: 'paint'
+        };
+
+        // Handle form submission
+        document.getElementById('quizForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent page reload
+
+            let score = 0;
+            const formData = new FormData(event.target);
+            
+            // Check each question
+            for (let [question, answer] of formData.entries()) {
+                if (correctAnswers[question] === answer) {
+                    score++;
+                }
+            }
+
+            // Show result
+            const resultElement = document.getElementById('result');
+            if (score === 5) {
+                resultElement.textContent = 'Congratulations! You got all the answers correct!';
+                resultElement.classList.remove('failure');
+                resultElement.classList.add('success');
+            } else {
+                resultElement.textContent = `You got ${score} out of 5 correct.`;
+                resultElement.classList.remove('success');
+                resultElement.classList.add('failure');
+            }
+            resultElement.style.display = 'block';
+        });
+    </script>
+
+</body>
+</html>
