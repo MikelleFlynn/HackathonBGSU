@@ -71,3 +71,9 @@ Plant data provided by the [Permapeople API](https://permapeople.org).
 This project would not be possible without their open-source plant database.
 
 Future Developement:
+    - Add more filtering functionalities
+    - Fine-tune current features
+    - Add a way to track milestones for your Garden
+    - Add reminder notifications (watering, planting, etc)
+    - Add Garden planner
+    - Add more mini games
