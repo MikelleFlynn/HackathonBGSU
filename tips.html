@@ -3,44 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tips-and-Tricks</title>
+    <title>Tips and Tricks</title>
 
     <style>
 
         body {
             margin: 0;
             background-color: rgb(243, 249, 210);
+            font-family: 'Garamond', serif;
+            color: #333
         }
 
-        h1 {
-            font-family: 'Garamond';
-            font-size: 40px;
+        p {
+            font-size: 20px;
+        }
+
+        header {
+            background-color: #c0d684;
+            padding: 40px 20px 20px;
             text-align: center;
-            background-color: rgb(192, 214, 132);
+            border-bottom: 6px solid #a5ba65;
         }
 
-        h2 {
-            font-family: 'Garamond';
+        header h1 {
+            margin: 0;
+            font-size: 40px;
         }
 
-        .nav-wrapper {
+        header p {
+            font-size: 22px;
+            margin-top: 10px;
+        }
+
+        nav {
             display: flex;
             justify-content: center;
-            align-items: center;
-            height: 100vh;
+            padding: 20px
         }
 
         nav ul {
             list-style: none;
             padding: 0;
             margin: 0;
-            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
         }
 
         nav ul li a {
             text-decoration: none;
             color: #333;
             font-size: 22px;
+            padding: 10px 20px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            border-radius: 8px;
         }
 
         nav ul li a:hover {
@@ -48,37 +66,113 @@
             background-color: rgba(249, 100, 209, 0.1);
         }
 
+        section {
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+
+        h2 {
+            text-align: center;
+            font-size: 34px;
+            margin-bottom: 15px;
+        }
+
+        dl {
+            margin-left: 20px;
+            font-size: 20px;
+        }
+
+        a {
+            color: #006400;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .section-img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 10px;
+        }
+
     </style>
 </head>
 <body>
-    <!-- TODO: add an intro explaing the purpose of the page-->
-    <h1>Gardening Tips</h1>
-    <p>[this is filler text for a little intro]</p>
+    <header>
+        <h1>Gardening Tips</h1>
+        <p>Simple tips to help you get the most out of your garden, indoors or out!</p>
+    </header>
 
     <nav>
         <ul>
-            <li><a href="#garden setup">Not sure how to get started?</a></li>
-            <li><a href="#compost">Want composting tips?</a></li>
-            <li><a href="#indoor gardening">Don't have yard space?</a></li>
+            <li><a href="#garden-setup">Not sure how to get started? 🧤</a></li>
+            <li><a href="#compost">Want composting tips? 🍂</a></li>
+            <li><a href="#indoor-gardening">Don't have yard space? 🏠</a></li>
         </ul>
       </nav>
 
     <!-- TODO: add actual information on garden setup-->
-    <section id="garden setup">
-        <h2>Garden Setup &#127806</h2>
+    <section id="garden-setup">
+        <h2>💧 Garden Setup</h2>
         <p>[this is filler text about setting up an outdoor garden]</p>
     </section>
 
-    <!-- TODO: add actual information on composting-->
     <section id="compost">
-        <h2>Composting</h2>
-        <p>[this is filler text about composting]</p>
+        <h2>♻️ Composting</h2>
+        <dl>
+            <dt><strong>Benefits:</strong></dt>
+            <dd>
+                Composting is a resourceful way to recycle the food scraps and yard 
+                trim you generate at home all year and manage your waste more sustainably.
+            </dd>
+
+            <dt><strong>How To:</strong></dt>
+            <dd>
+                Composting can be done in your backyard by having four key components: 
+                greens (fruit and veggie scraps, crushed eggshells, and grass clippings), 
+                browns (dry leaves, untreated wood chips, shredded brown bags), air, and water. 
+                You want to avoid glossy or colored paper, dairy or meat products, and grease.
+            </dd>
+
+            <dt><strong>Resources:</strong></dt>
+            <dd><a href="https://www.epa.gov/recycle/composting-home#whycom" target="_blank">Click here to learn more about composting!</a></dd>
+        </dl>
     </section>
 
     <!-- TODO: add actual information on indoor gardening-->
-    <section id="indoor gardening">
+    <section id="indoor-gardening">
         <h2>Indoor Gardens</h2>
-        <p>[this is filler text about gardening indoors]</p>
+        <dl>
+            <dt><strong>Benefits:</strong></dt>
+            <dd>
+                Having house plants (or starting an indoor garden) in your space can improve mood, 
+                focus, and productivity. Indoor plants can also make you happier and even help you recover from illnesses! 
+                There are many ways to get these benefits inside your home beyond your typical house plant.
+            </dd>
+
+            <dt><strong>Hydroponics</strong></dt>
+            <dd>
+
+            </dd>
+
+            <dt><strong>Windowsill Gardens</strong></dt>
+            <dd>
+                Like the name suggests, a windowsill garden can either hang from your window or simply sit in it. 
+                They are a great option for people who have limited space, don’t have time to commit to an outdoor 
+                garden, or regularly have inclement weather conditions. Easy to grow items include: herbs, leafy greens, 
+                succulents, flowers, and many others.
+            </dd>
+
+            <dt><strong>Resources:</strong></dt>
+            <dd>
+                
+            </dd>
+        </dl>
     </section>
 </body>
 </html>
