@@ -14,6 +14,10 @@
             color: #333
         }
 
+        p {
+            font-size: 20px;
+        }
+
         header {
             background-color: #c0d684;
             padding: 40px 20px 20px;
@@ -22,35 +26,39 @@
         }
 
         header h1 {
-            font-family: 'Garamond';
+            margin: 0;
             font-size: 40px;
-            text-align: center;
-            background-color: rgb(192, 214, 132);
         }
 
         header p {
-            font-size: 18px;
+            font-size: 22px;
             margin-top: 10px;
         }
 
-        .nav-wrapper {
+        nav {
             display: flex;
             justify-content: center;
-            align-items: center;
-            height: 100vh;
+            padding: 20px
         }
 
         nav ul {
             list-style: none;
             padding: 0;
             margin: 0;
-            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
         }
 
         nav ul li a {
             text-decoration: none;
             color: #333;
             font-size: 22px;
+            padding: 10px 20px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            border-radius: 8px;
         }
 
         nav ul li a:hover {
@@ -67,8 +75,13 @@
 
         h2 {
             text-align: center;
-            font-size: 30px;
+            font-size: 34px;
             margin-bottom: 15px;
+        }
+
+        dl {
+            margin-left: 20px;
+            font-size: 20px;
         }
 
         a {
@@ -77,6 +90,14 @@
 
         a:hover {
             text-decoration: underline;
+        }
+
+        .section-img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 10px;
         }
 
     </style>
@@ -89,20 +110,20 @@
 
     <nav>
         <ul>
-            <li><a href="#garden-setup">Not sure how to get started?</a></li>
-            <li><a href="#compost">Want composting tips?</a></li>
-            <li><a href="#indoor-gardening">Don't have yard space?</a></li>
+            <li><a href="#garden-setup">Not sure how to get started? 🧤</a></li>
+            <li><a href="#compost">Want composting tips? 🍂</a></li>
+            <li><a href="#indoor-gardening">Don't have yard space? 🏠</a></li>
         </ul>
       </nav>
 
     <!-- TODO: add actual information on garden setup-->
-    <section id="garden setup">
-        <h2>&#127806 Garden Setup</h2>
+    <section id="garden-setup">
+        <h2>💧 Garden Setup</h2>
         <p>[this is filler text about setting up an outdoor garden]</p>
     </section>
 
     <section id="compost">
-        <h2>Composting</h2>
+        <h2>♻️ Composting</h2>
         <dl>
             <dt><strong>Benefits:</strong></dt>
             <dd>
@@ -124,9 +145,34 @@
     </section>
 
     <!-- TODO: add actual information on indoor gardening-->
-    <section id="indoor gardening">
+    <section id="indoor-gardening">
         <h2>Indoor Gardens</h2>
-        <p>[this is filler text about gardening indoors]</p>
+        <dl>
+            <dt><strong>Benefits:</strong></dt>
+            <dd>
+                Having house plants (or starting an indoor garden) in your space can improve mood, 
+                focus, and productivity. Indoor plants can also make you happier and even help you recover from illnesses! 
+                There are many ways to get these benefits inside your home beyond your typical house plant.
+            </dd>
+
+            <dt><strong>Hydroponics</strong></dt>
+            <dd>
+
+            </dd>
+
+            <dt><strong>Windowsill Gardens</strong></dt>
+            <dd>
+                Like the name suggests, a windowsill garden can either hang from your window or simply sit in it. 
+                They are a great option for people who have limited space, don’t have time to commit to an outdoor 
+                garden, or regularly have inclement weather conditions. Easy to grow items include: herbs, leafy greens, 
+                succulents, flowers, and many others.
+            </dd>
+
+            <dt><strong>Resources:</strong></dt>
+            <dd>
+                
+            </dd>
+        </dl>
     </section>
 </body>
 </html>
