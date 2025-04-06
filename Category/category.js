@@ -1,8 +1,13 @@
 const keywordMap = {
-    herbs: ["mint", "basil", "thyme", "oregano", "parsley", "cilantro", "chives", "sage", "rosemary", "dill", "tarragon", "lemongrass", "lavender", "fennel", "marjoram"],
-    flowers: ["rose", "daisy", "tulip", "lily", "orchid", "sunflower", "violet", "poppy", "iris", "hibiscus"],
-    produce: ["apple", "peach", "grape", "carrot", "lettuce", "tomato", "potato", "onion", "broccoli", "cabbage", "strawberry", "zucchini", "radish", "cucumber", "corn"]
-  };
+  herbs: ["mint", "basil", "thyme", "oregano", "parsley", "cilantro", "chives", "sage", "rosemary", "dill", "tarragon", "lemongrass", "lavender", "fennel", "marjoram"],
+  flowers: ["rose", "daisy", "tulip", "lily", "orchid", "sunflower", "violet", "poppy", "iris", "hibiscus"],
+  produce: ["apple", "peach", "grape", "carrot", "lettuce", "tomato", "potato", "onion", "broccoli", "cabbage", "strawberry", "zucchini", "radish", "cucumber", "corn"],
+  all: []  // will be filled below
+};
+
+// Combine all keywords into "all"
+keywordMap.all = [...new Set([...keywordMap.herbs, ...keywordMap.flowers, ...keywordMap.produce])];
+
   
   async function fetchCategoryPlants(keywords) {
     const seenIds = new Set();
