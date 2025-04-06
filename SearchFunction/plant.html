@@ -109,27 +109,35 @@
   <script>
     const urlParams = new URLSearchParams(window.location.search);
     const category = urlParams.get("category");
+    const source = urlParams.get("source");
     const plantId = urlParams.get("id");
-
+  
     const backLink = document.getElementById("backToCategory");
+  
+    // 🔙 FIX: Handles all return scenarios
     if (category) {
-      backLink.href = `../Category/${category}.html`;
-      backLink.textContent = `← Back to ${category.charAt(0).toUpperCase() + category.slice(1)}`;
-    } else {
+      let filename = category === "all" ? "allplants" : category;
+      let label = category === "all" ? "All Plants" : category.charAt(0).toUpperCase() + category.slice(1);
+      backLink.href = `../Category/${filename}.html`;
+      backLink.textContent = `← Back to ${label}`;
+    } else if (source === "search") {
       backLink.href = "../main.html";
       backLink.textContent = "← Back to Search";
+    } else {
+      backLink.href = "../main.html";
+      backLink.textContent = "← Back";
     }
-
+  
     async function fetchPlantDetails() {
       try {
         const res = await fetch("http://localhost:3000/api/plant/" + plantId);
         const plant = await res.json();
-
+  
         const getDataValue = (key) => {
           const entry = plant.data.find(d => d.key === key);
           return entry ? entry.value : "Unknown";
         };
-
+  
         document.getElementById("plantImage").src = plant.images?.title || "";
         document.getElementById("plantImage").alt = plant.name || "Plant image";
         document.getElementById("plantName").textContent = plant.name || "Unknown";
@@ -138,14 +146,13 @@
         document.getElementById("waterNeeds").textContent = getDataValue("Water requirement");
         document.getElementById("soilType").textContent = getDataValue("Soil type");
         document.getElementById("region").textContent = getDataValue("Native to");
-
       } catch (err) {
-        console.error("Failed to load plant:", err);
+        console.error("❌ Failed to load plant:", err);
       }
     }
-
+  
     fetchPlantDetails();
-  </script>
+  </script>  
 </body>
 </html>
 

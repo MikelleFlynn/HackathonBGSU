@@ -46,19 +46,28 @@
   </script>
   
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const loginLink = document.getElementById("login-link");
-      const user = localStorage.getItem("loggedInUser");
-
-      if (user) {
-        loginLink.textContent = "Account";
-        loginLink.href = "account.html"; // Link to an account page if you have one
-      } else {
-        loginLink.textContent = "Login";
-        loginLink.href = "login.html";
-      }
+    window.addEventListener("DOMContentLoaded", () => {
+      const observer = new MutationObserver(() => {
+        const loginLink = document.getElementById("login-link");
+        if (loginLink) {
+          const user = localStorage.getItem("loggedInUser");
+  
+          if (user) {
+            loginLink.textContent = "Account";
+            loginLink.href = "account.html";
+          } else {
+            loginLink.textContent = "Login";
+            loginLink.href = "login.html";
+          }
+  
+          observer.disconnect(); // Stop observing once we found the element
+        }
+      });
+  
+      observer.observe(document.body, { childList: true, subtree: true });
     });
   </script>
+  
   <script src="SearchFunction/search.js"></script>
 </div>
 
