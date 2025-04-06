@@ -65,35 +65,34 @@
       font-size: 18px;
     }
 
+    .back-button {
+      display: inline-block;
+      margin: 0 auto 30px;
+      padding: 10px 20px;
+      background-color: #e8f5e9;
+      color: #2e7d32;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .back-button:hover {
+      background-color: #c8e6c9;
+    }
+
     @media (max-width: 600px) {
       .plant-detail {
         padding: 25px;
       }
     }
-
-        .back-button {
-    display: inline-block;
-    margin: 0 auto 30px;
-    padding: 10px 20px;
-    background-color: #e8f5e9;
-    color: #2e7d32;
-    text-decoration: none;
-    border-radius: 8px;
-    font-size: 15px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-
-    .back-button:hover {
-    background-color: #c8e6c9;
-    }
-
   </style>
 </head>
 <body>
   <div class="plant-detail">
-    <a href="../main.html" class="back-button">← Back to Search</a>
+    <a id="backToCategory" class="back-button" href="#">← Back</a>
 
     <div class="plant-header">
       <h1 id="plantName">Loading...</h1>
@@ -107,8 +106,48 @@
     <div class="plant-stat"><span class="icon">🌍</span> <span id="region">Loading...</span></div>
   </div>
 
-  <script src="plant.js"></script>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const category = urlParams.get("category");
+    const plantId = urlParams.get("id");
+
+    const backLink = document.getElementById("backToCategory");
+    if (category) {
+      backLink.href = `../Category/${category}.html`;
+      backLink.textContent = `← Back to ${category.charAt(0).toUpperCase() + category.slice(1)}`;
+    } else {
+      backLink.href = "../main.html";
+      backLink.textContent = "← Back to Search";
+    }
+
+    async function fetchPlantDetails() {
+      try {
+        const res = await fetch("http://localhost:3000/api/plant/" + plantId);
+        const plant = await res.json();
+
+        const getDataValue = (key) => {
+          const entry = plant.data.find(d => d.key === key);
+          return entry ? entry.value : "Unknown";
+        };
+
+        document.getElementById("plantImage").src = plant.images?.title || "";
+        document.getElementById("plantImage").alt = plant.name || "Plant image";
+        document.getElementById("plantName").textContent = plant.name || "Unknown";
+        document.getElementById("sciName").textContent = plant.scientific_name || "N/A";
+        document.getElementById("sunNeeds").textContent = getDataValue("Light requirement");
+        document.getElementById("waterNeeds").textContent = getDataValue("Water requirement");
+        document.getElementById("soilType").textContent = getDataValue("Soil type");
+        document.getElementById("region").textContent = getDataValue("Native to");
+
+      } catch (err) {
+        console.error("Failed to load plant:", err);
+      }
+    }
+
+    fetchPlantDetails();
+  </script>
 </body>
 </html>
+
 
 
