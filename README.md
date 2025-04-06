@@ -1,10 +1,11 @@
-# HackathonBGSU
+# HackathonBGSU - Gardenology
 
 Team name: AllVibesNoWaste
 Track: Sustainability
 Members: Mikelle Flynn, Austin Opsomer, Mia Howard, Megan Brown
 
-Gardenology is a web app that helps users learn about plants, find gardening tips, and build their own virtual garden. It connects to the Permapeople API for plant data, supports search and categorization, and includes interactive features like saving plants to a personal garden.
+About:
+    Gardenology is a web app that helps users learn about plants, find gardening tips, and build their own virtual garden. It connects to the Permapeople API for plant data, supports search and categorization, and includes interactive features like saving plants to a personal garden.
 
 Features:
     - Search for plants by name
@@ -31,3 +32,9 @@ Setup:
     3. Run "node server.js" before opening live server extension on VSCode
 
 Future Developement:
+    - Add more filtering functionalities
+    - Fine-tune current features
+    - Add a way to track milestones for your Garden
+    - Add reminder notifications (watering, planting, etc)
+    - Add Garden planner
+    - Add more mini games
