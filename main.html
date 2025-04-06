@@ -7,7 +7,54 @@
   <title>Basic Top Bar Website</title>
 </head>
 <body>
-  <div id="navbar-container"></div>
+  <div class="topbar">
+
+    <div class="logo">HackathonBGSU</div>
+    
+    <form class="search-box" onsubmit="searchPlants(); return false;">
+      <div class="search-wrapper">
+        <input type="text" id="plantInput" placeholder="Search plants..." oninput="showSuggestions()" autocomplete="off" />
+        <div id="suggestions" class="suggestions-box"></div>
+      </div>
+      <button type="submit">🔍</button>
+    </form>    
+
+    <nav>
+      <div class="dropdown">
+        <a href="main.html">Home</a>
+      </div>
+      
+      <div class="dropdown">
+        <a href="#">Plants▾</a>
+        <div class="dropdown-content">
+          <a href="Category/herbs.html">Herbs</a>
+          <a href="Category/flowers.html">Flowers</a>
+          <a href="Category/produce.html">Produce</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a href="careCards.html">Activities</a>
+      </div>
+
+      <div class="dropdown">
+        <a href="tips.html">Tips▾</a>
+        <div class="dropdown-content">
+          <a href="#">Watering</a>
+          <a href="#">Sunlight</a>
+          <a href="#">Soil</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a href="ContactPage/contact.html">Contact</a>
+      </div>
+
+      <div id="login" class="dropdown">
+        <a href="login.html" id="login-link">Login</a>
+      </div>
+    </nav>
+  </div>
 
   <div>
     <img class="banner" src="Images/banner.jpg" />

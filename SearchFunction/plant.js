@@ -1,5 +1,16 @@
 const urlParams = new URLSearchParams(window.location.search);
+const category = urlParams.get("category");
 const plantId = urlParams.get("id");
+
+const backLink = document.getElementById("backToCategory");
+
+if (category) {
+  backLink.href = `../Category/${category}.html`;
+  backLink.textContent = `← Back to ${category.charAt(0).toUpperCase() + category.slice(1)}`;
+} else {
+  backLink.href = "../main.html";
+  backLink.textContent = "← Back to Search";
+}
 
 async function fetchPlantDetails() {
   try {
