@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Match Images to Names Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="navbar-container"></div>
+
+    <style>
+        #matching {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+
+        #matching h1 {
+            text-align: center;
+        }
+
+        .game-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .images, .names {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .image, .name {
+            width: 120px;
+            padding: 10px;
+            text-align: center;
+            border: 2px solid #ddd;
+            background-color: #fff;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+
+        /* Hover effect for images and names */
+        .image:hover, .name:hover {
+            background-color: #e0f7fa;
+        }
+
+        .selected {
+            background-color: #F3F9D2;
+            border-color: #F3F9D2;
+        }
+
+        .matched {
+            background-color: #a5d6a7;
+            pointer-events: none;
+        }
+
+        .wrong {
+            background-color: #f44336; /* Red for wrong match */
+            border-color: #d32f2f;
+        }
+
+        /* Ensure the parent container (imageContainer and nameContainer) does not get affected */
+        .images, .names {
+            background-color: transparent;
+        }
+
+        .message {
+            font-size: 24px;
+            margin-top: 20px;
+            color: #4caf50;
+            display: none;
+        }
+    </style>
+
+    <div id="matching">
+        <h1>Match Images to Names</h1>
+
+        <div class="game-container">
+            <div class="images" id="imageContainer">
+                <!-- Image options will be inserted here -->
+            </div>
+
+            <div class="names" id="nameContainer">
+                <!-- Name options will be inserted here -->
+            </div>
+        </div>
+
+        <div class="message" id="message">Congratulations! You've matched all images with names!</div>
+    </div>
+
+    <script>
+        // Define the set of images and names
+        const images = [
+            { src: 'Images/Allium.jpg', name: 'Allium' },
+            { src: 'Images/Basil.jpg', name: 'Basil' },
+            { src: 'Images/BellPepper.jpg', name: 'Bell Pepper' },
+            { src: 'Images/Blackberry.jpg', name: 'Blackberry' },
+            { src: 'Images/BlackEyedSusan.jpg', name: 'Black-Eyed Susan'},
+            { src: 'Images/BleedingHeart.jpg', name: 'Bleeding Heart'},
+            { src: 'Images/Blueberry.jpg', name: 'Blueberry'},
+            { src: 'Images/BlueBonnet.jpg', name: 'Blue Bonnet'},
+            { src: 'Images/Carnation.jpg', name: 'Carnation'},
+            { src: 'Images/Daylily.jpg', name: 'Daylily'},
+            { src: 'Images/Garlic.jpg', name: 'Garlic'},
+            { src: 'Images/Hydrangea.jpg', name: 'Hydrangea'},
+            { src: 'Images/Lavender.jpg', name: 'Lavender'},
+            { src: 'Images/Lemon.jpg', name: 'Lemon'},
+            { src: 'Images/Lettuce.jpg', name: 'Lettuce'},
+            { src: 'Images/Milkweed.jpg', name: 'Milkweed'},
+            { src: 'Images/Mint.jpg', name: 'Mint'},
+            { src: 'Images/Oregano.jpg', name: 'Oregano'},
+            { src: 'Images/Parsley.jpg', name: 'Parsley'},
+            { src: 'Images/Pea.jpg', name: 'Pea'},
+            { src: 'Images/Rosemary.jpg', name: 'Rosemary'},
+            { src: 'Images/Squash.jpg', name: 'Squash'},
+            { src: 'Images/Strawberry.jpg', name: 'Strawberry'},
+            { src: 'Images/SweetPea.jpg', name: 'Sweet Pea'},
+            { src: 'Images/Thyme.jpg', name: 'Thyme'},
+            { src: 'Images/Tomato.jpg', name: 'Tomato'},
+            { src: 'Images/Zucchini.jpg', name: 'Zucchini'}
+        ];
+
+        // Shuffle function for randomizing image/name order
+        function shuffle(cards) {
+            for (let i = cards.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [cards[i], cards[j]] = [cards[j], cards[i]]; // Swap elements
+            }
+        }
+
+        // Clone the images array and shuffle it for randomizing the images and names separately
+        let shuffledImages = [...images];
+        let shuffledNames = [...images];
+
+        shuffle(shuffledImages); // Shuffle the images array
+        shuffle(shuffledNames);  // Shuffle the names array
+
+        let selectedImage = null;
+        let selectedName = null;
+        let matchedPairs = 0;
+
+        function createGameBoard() {
+            const imageContainer = document.getElementById('imageContainer');
+            const nameContainer = document.getElementById('nameContainer');
+
+            // Create shuffled image divs
+            shuffledImages.forEach(item => {
+                const imageDiv = document.createElement('div');
+                imageDiv.classList.add('image');
+                imageDiv.setAttribute('data-name', item.name);
+                imageDiv.innerHTML = `<img src="${item.src}" alt="${item.name}" width="100" height="100">`;
+                imageDiv.addEventListener('click', onImageClick);
+                imageContainer.appendChild(imageDiv);
+            });
+
+            // Create shuffled name divs
+            shuffledNames.forEach(item => {
+                const nameDiv = document.createElement('div');
+                nameDiv.classList.add('name');
+                nameDiv.innerHTML = item.name;
+                nameDiv.addEventListener('click', onNameClick);
+                nameContainer.appendChild(nameDiv);
+            });
+        }
+
+        function resetWrongState() {
+            // Reset the wrong class from previously selected elements
+            const wrongImages = document.querySelectorAll('.image.wrong');
+            const wrongNames = document.querySelectorAll('.name.wrong');
+
+            wrongImages.forEach(image => {
+                image.classList.remove('wrong');
+            });
+            wrongNames.forEach(name => {
+                name.classList.remove('wrong');
+            });
+        }
+
+        function onImageClick(event) {
+            if (selectedImage) return; // Only allow selecting one image at a time
+
+            selectedImage = event.target.parentNode; // Get the parent div (image div)
+
+            // If the image is already wrong, do nothing
+            if (selectedImage.classList.contains('wrong')) {
+                resetWrongState();
+            }
+
+            // Reset any previously wrong state before marking the new selected one
+            //resetWrongState();
+
+            selectedImage.classList.add('selected');
+        }
+
+        function onNameClick(event) {
+            if (!selectedImage) return; // No image selected yet
+
+            selectedName = event.target; // Get the clicked name div
+
+            // If the name is already wrong, do nothing
+            if (selectedName.classList.contains('wrong')) {
+                resetWrongState();
+            }
+
+            // Reset any previously wrong state before marking the new selected one
+            //resetWrongState();
+
+            selectedName.classList.add('selected');
+
+            // Check if the image and name match
+            if (selectedImage.getAttribute('data-name') === selectedName.innerHTML) {
+                selectedImage.classList.add('matched');
+                selectedName.classList.add('matched');
+                matchedPairs++;
+
+                // Check if all pairs have been matched
+                if (matchedPairs === images.length) {
+                    document.getElementById('message').style.display = 'block';
+                }
+            } else {
+                // If not matched, apply the wrong class for red background
+                selectedImage.classList.add('wrong');
+                selectedName.classList.add('wrong');
+
+                // Reset after a short delay (1 second)
+                setTimeout(() => {
+                    // Remove the wrong and selected classes after 1 second
+                    selectedImage.classList.remove('wrong', 'selected');
+                    selectedName.classList.remove('wrong', 'selected');
+                }, 1000);
+            }
+
+            // Reset selected values
+            selectedImage = null;
+            selectedName = null;
+        }
+
+        // Initialize the game board
+        createGameBoard();
+    </script>
+    <script src="/Scripts/loadNavbar.js"></script>
+</body>
+</html>
